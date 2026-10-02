@@ -3,7 +3,7 @@
 Atraen is a modern, animated Astro theme for coaches, consultants and advisors. It ships with a home page,
 about, services, blog, contact, style guide and 404 pages, plus Strapi-powered blog posts and services.
 
-**Live demo:** https://atraen-astro.vercel.app <!-- replace with your deployment URL -->
+**Live demo:** https://atraen-astro-theme.vercel.app
 
 ![Astro 7](https://img.shields.io/badge/Astro-7-orange) ![Strapi 5](https://img.shields.io/badge/Strapi-5-blue)
 
