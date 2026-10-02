@@ -1,0 +1,12 @@
+/*
+ * Theme additions (imported after the Webflow CSS). Put your own overrides here so the original
+ * Webflow stylesheets stay untouched and easy to diff/upgrade.
+ */
+
+/* Fix: the service-detail gallery list is ~17px wider than the viewport at tablet widths in the original
+   template, which causes a horizontal scrollbar. Clipping it removes the scroll without changing the layout. */
+@media screen and (max-width: 991px) {
+  .section-service-details {
+    overflow-x: clip;
+  }
+}

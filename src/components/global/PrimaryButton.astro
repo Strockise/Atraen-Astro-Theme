@@ -1,0 +1,28 @@
+---
+/**
+ * Orange "primary" button with the sliding-arrow hover (Webflow IX3 component acb23ad5…).
+ * Keep the data-wf-* attributes: the hover interaction is bound to them.
+ */
+import ArrowIcon from './ArrowIcon.astro';
+import { isCurrent } from '../../lib/utils';
+
+interface Props {
+  href: string;
+  text: string;
+  /** Mark as the current page link (Webflow `w--current`). Defaults to automatic detection. */
+  current?: boolean;
+}
+const { href, text } = Astro.props;
+const current = Astro.props.current ?? isCurrent(href, Astro.url.pathname);
+---
+<a data-wf-component-id="acb23ad5-7d1c-0647-8561-91bf1ab3acbf" data-wf-variant-state="base" href={href} aria-current={current ? 'page' : undefined} class:list={['primary-button w-inline-block', current && 'w--current']}>
+  <div class="button-arrow is-left">
+    <div class="button-arrow-icon w-embed"><ArrowIcon /></div>
+  </div>
+  <div class="button-text-block">
+    <div class="button-text">{text}</div>
+  </div>
+  <div class="button-arrow is-right">
+    <div class="button-arrow-icon w-embed"><ArrowIcon /></div>
+  </div>
+</a>

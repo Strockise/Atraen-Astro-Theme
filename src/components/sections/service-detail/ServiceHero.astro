@@ -1,0 +1,32 @@
+---
+/** Service detail hero: banner image, title, CTA and short summary. */
+import SecondaryButton from '../../global/SecondaryButton.astro';
+import type { Service } from '../../../lib/cms';
+
+interface Props {
+  service: Service;
+}
+const { service } = Astro.props;
+---
+<section class="section-service-hero">
+  <div class="w-layout-blockcontainer container-fluid w-container">
+    <div class="service-hero-wrapper">
+      <div class="service-hero-image-block">{service.banner && <img src={service.banner.url} loading="eager" fetchpriority="high" alt={service.banner.alt} class="service-hero-image" />}
+        <div class="service-image-overlay"></div>
+        <div data-wf-target="[[[&quot;6abe84b3182afe641eb8e34a&quot;,&quot;14d90143-be3e-3c6f-21c4-80856019d553&quot;],[]]]" class="service-hero-content-block-two">
+          <div class="service-header-wrapper">
+            <div class="section-header-block max-width-39-438rem">
+              <h1 class="heading-style-h1 text-color-white">{service.title}</h1>
+            </div>
+            <div class="service-button-wrap">
+              <SecondaryButton href="/contact" text="Let’s Collaborate" />
+            </div>
+          </div>
+          <div class="section-summary-block max-width-21-438rem">
+            <p class="body-text-main gray-color-3 text-align-right">{service.heroSummary}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

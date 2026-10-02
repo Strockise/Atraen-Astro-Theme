@@ -1,0 +1,62 @@
+{
+  "site": {
+    "name": "Atraen",
+    "titleSuffix": "Personal Consulting Astro Theme",
+    "description": "Atraen is a modern personal consulting Astro theme for coaches, consultants, and advisors to grow their brand online.",
+    "ogImage": "/images/og-image.png",
+    "logoLight": "/images/Atraen-Logo-1.svg",
+    "logoDark": "/images/Atraen-Logo-2.svg",
+    "footerLogo": "/images/RoofPro-Services.svg",
+    "lang": "en"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "+1 (555) 010-0123",
+    "phoneHref": "tel:+15550100123",
+    "address": "123 Example Street, Springfield"
+  },
+  "social": [
+    {
+      "name": "Facebook",
+      "icon": "facebook",
+      "url": "https://facebook.com"
+    },
+    {
+      "name": "X",
+      "icon": "x",
+      "url": "https://x.com"
+    },
+    {
+      "name": "Instagram",
+      "icon": "instagram",
+      "url": "https://instagram.com"
+    }
+  ],
+  "cta": {
+    "label": "Let’s Collaborate",
+    "href": "/contact"
+  },
+  "newsletter": {
+    "eyebrow": "By the way",
+    "title": "Subscribe for our news latters ",
+    "placeholder": "Enter Your Email Address",
+    "button": "Subscribe",
+    "success": "Thank you! Your submission has been received!",
+    "error": "Oops! Something went wrong while submitting the form."
+  },
+  "copyright": {
+    "text": "© 2026 Copyright | Powered by ",
+    "linkLabel": "Astro",
+    "linkUrl": "https://astro.build"
+  },
+  "video": {
+    "url": "/videos/hero-bg-video_mp4.mp4",
+    "poster": "/videos/hero-bg-video_poster.0000000.jpg",
+    "title": "Atraen intro video",
+    "width": 940,
+    "height": 528
+  },
+  "webflow": {
+    "siteId": "6abe84b3182afe641eb8e376"
+  }
+}

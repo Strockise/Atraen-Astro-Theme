@@ -1,0 +1,27 @@
+{
+  "title": "Trusted by People Who Value Clarity",
+  "summary": "Real words from clients who gained confidence, direction, and meaningful progress through our work together.",
+  "items": [
+    {
+      "quote": "Working alongside this consultant completely reshaped my viewpoint, providing the clarity I had been searching for. Every enlightening session not only armed me with practical strategies but also turned our meetings into a wellspring of innovative ideas to help me achieve my objectives.",
+      "name": "Jenny Wilson",
+      "role": "Marketing Coordinator",
+      "image": "/images/Testimonial-Image-1.webp",
+      "imageSmall": "/images/Testimonial-Image-2.webp"
+    },
+    {
+      "quote": "\"The guidance provided was not only practical and straightforward but also refreshingly honest. It has empowered me to make decisions with newfound confidence, allowing me to trust my instincts and approach challenges with a clear mind. I truly appreciate the clarity it has brought to my decision-making process.\"",
+      "name": "Savannah Nguyen",
+      "role": "Medical Assistant",
+      "image": "/images/Testimonial-Image-2_1.webp",
+      "imageSmall": "/images/Testimonial-Image-3_1.webp"
+    },
+    {
+      "quote": "\"This wasn’t merely any piece of advice; it was meticulously tailored to align seamlessly with my distinct circumstances, ensuring that it resonated with my specific needs and situation perfectly.\"",
+      "name": "Robert Fox",
+      "role": "President of Sales",
+      "image": "/images/Testimonial-Image-3.webp",
+      "imageSmall": "/images/Testimonial-Image-2.webp"
+    }
+  ]
+}

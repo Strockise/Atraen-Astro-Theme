@@ -1,0 +1,80 @@
+---
+import VideoLightboxData from '../../global/VideoLightboxData.astro';
+import SecondaryButton from '../../global/SecondaryButton.astro';
+---
+<section class="section-hero">
+        <div class="hero-gap">
+          <div class="w-layout-blockcontainer container-main w-container">
+            <div class="hero-wrapper">
+              <div class="hero-content-block">
+                <div class="hero-left-content-block">
+                  <div class="hero-heading-block">
+                    <div class="hero-rating-block">
+                      <div class="hero-rating-avatar-block"><img src="/images/hero-rating-avatar-1.png" loading="lazy" alt="hero-rating-avatar" class="hero-rating-avatar is-1"><img src="/images/hero-rating-avatar-2.png" loading="lazy" alt="hero-rating-avatar" class="hero-rating-avatar"><img src="/images/hero-rating-avatar-3.png" loading="lazy" alt="hero-rating-avatar" class="hero-rating-avatar"></div>
+                      <p class="text-size-large text-color-white text-weight-medium">450+ People <br>Satisfied</p>
+                    </div>
+                    <div class="hero-title-block">
+                      <h1 class="display-style-1">Choose wisely and pave your own way!</h1>
+                    </div>
+                  </div>
+                  <div class="hero-text-block">
+                    <div class="hero-summary-block">
+                      <p class="text-size-large text-color-white">__________I work with professionals, founders, and individuals to bring clarity, direction, and practical strategies so you can grow personally and professionally without confusion.</p>
+                    </div>
+                    <div class="hero-button-block">
+                      <SecondaryButton href="/contact" text="Let’s Collaborate" />
+                    </div>
+                  </div>
+                </div>
+                <div class="hero-right-content-block">
+                  <div class="hero-card-block">
+                    <div class="hero-card-image-block"><img src="/images/Hero-Card-Image-1.webp" loading="lazy" alt="Hero Card Image" class="hero-card-image">
+                      <a href="#" class="hero-lightbox-block w-inline-block w-lightbox">
+                        <p class="hero-lightbox-text">Watch Now</p>
+                        <div class="hero-lightbox-icon-block">
+                          <div class="hero-lightbox-icon w-embed"><svg width="8" height="9" viewbox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M7.5 3.59958C8.16667 3.98448 8.16667 4.94673 7.5 5.33163L1.5 8.79573C0.833334 9.18063 0 8.69951 0 7.92971V1.00151C0 0.231705 0.833333 -0.249421 1.5 0.13548L7.5 3.59958Z" fill="white"></path>
+                            </svg>
+                          </div>
+                        </div>
+                        <VideoLightboxData />
+                      </a>
+                    </div>
+                    <div class="hero-card-content-block">
+                      <div class="hero-card-icon-block"><img src="/images/Hero-Card-Icon.svg" loading="lazy" alt="Hero Card Icon" class="hero-card-icon"></div>
+                      <div class="hero-card-text-block">
+                        <div class="text-size-large text-weight-medium text-color-white">Structured &amp; Personalized</div>
+                        <p class="text-size-small text-color-black-5">No generic advice only strategies tailored to you.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-bg-block">
+          <div data-poster-url="/videos/hero-bg-video_poster.0000000.jpg" data-video-urls="/videos/hero-bg-video_mp4.mp4,/videos/hero-bg-video_webm.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="hero-bg-video w-background-video w-background-video-atom"><video id="07a4005b-6e5b-7fac-57d9-8403260fb67d-video" autoplay="" loop="" style="background-image:url(&quot;/videos/hero-bg-video_poster.0000000.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+              <source src="/videos/hero-bg-video_mp4.mp4" data-wf-ignore="true">
+              <source src="/videos/hero-bg-video_webm.webm" data-wf-ignore="true">
+            </video><noscript>
+              <style is:inline>
+  [data-wf-bgvideo-fallback-img] {
+    display: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-wf-bgvideo-fallback-img] {
+      position: absolute;
+      z-index: -100;
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }</style><img data-wf-bgvideo-fallback-img="true" src="/videos/hero-bg-video_poster.0000000.jpg" alt="">
+            </noscript>
+            <div aria-live="polite"><button type="button" data-w-bg-video-control="true" aria-controls="07a4005b-6e5b-7fac-57d9-8403260fb67d-video" class="w-backgroundvideo-backgroundvideoplaypausebutton video-controller-button w-background-video--control"><span><img src="/images/video-pause.svg" loading="lazy" alt="Pause video"></span><span hidden=""><img loading="lazy" alt="Play video" src="/images/video-play.svg"></span></button></div>
+          </div>
+          <div class="hero-bg-overlay"></div>
+        </div>
+      </section>

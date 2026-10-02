@@ -1,0 +1,45 @@
+---
+/** Blog listing: every post as a grid on desktop, one post per slide on mobile. */
+import SliderControls from '../../global/SliderControls.astro';
+import CollectionList from '../../global/CollectionList.astro';
+import BlogCard from '../../cards/BlogCard.astro';
+import type { Blog } from '../../../lib/cms';
+
+interface Props {
+  posts: Blog[];
+  title?: string;
+}
+const { posts, title = 'All Blog' } = Astro.props;
+---
+<section class="section-blog">
+  <div class="section-gap">
+    <div class="w-layout-blockcontainer container-main w-container">
+      <div scroll="scroll interaction" class="blog-wrapper">
+        <div class="blog-header-block">
+          <div class="section-header-block">
+            <h2 class="heading-style-2">{title}</h2>
+          </div>
+        </div>
+        <div class="blog-content-wrapper desktop">
+          <CollectionList items={posts} wrapperClass="blog-collection-list-wrapper" listClass="blog-collection-list" itemClass="blog-collection-item" listAttrs={{ scroll: 'scroll interaction' }}>
+            {(post: Blog) => <BlogCard post={post} layout="grid" titleLabel="blog-card-title-link" />}
+          </CollectionList>
+        </div>
+        <div class="blog-content-wrapper mobile">
+          <div data-delay="4000" data-animation="slide" class="blog-slider-block w-slider" data-autoplay="false" scroll="scroll interaction" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
+            <div class="blog-slider-mask w-slider-mask">
+              {posts.map((post) => (
+                <div class="blog-slider w-slide">
+                  <CollectionList items={[post]} wrapperClass="blog-collection-list-wrapper" listClass="blog-collection-list" itemClass="blog-collection-item">
+                    {(p: Blog) => <BlogCard post={p} layout="slider" titleLabel="blog-card-title-link" />}
+                  </CollectionList>
+                </div>
+              ))}
+            </div>
+            <SliderControls />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

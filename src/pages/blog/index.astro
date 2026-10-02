@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/global/Header.astro';
+import Footer from '../../components/global/Footer.astro';
+import BlogHero from '../../components/sections/blog/BlogHero.astro';
+import Blog from '../../components/sections/blog/Blog.astro';
+import FaqSection from '../../components/sections/FaqSection.astro';
+import config from '../../config/config.json';
+import { getBlogs } from '../../lib/cms';
+
+const wfPage = '6abe84b3182afe641eb8e34d';
+const posts = await getBlogs();
+---
+<BaseLayout title={`Blog - ${config.site.titleSuffix}`} wfPage={wfPage}>
+  <div class="page-wrapper">
+    <Header />
+    <div class="main-wrapper">
+      <BlogHero />
+      <Blog posts={posts} />
+      <FaqSection variant="variant-2" />
+    </div>
+    <Footer wfPage={wfPage} />
+  </div>
+</BaseLayout>

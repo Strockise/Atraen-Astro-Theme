@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/global/Header.astro';
+import Footer from '../components/global/Footer.astro';
+import NotFound from '../components/sections/not-found/NotFound.astro';
+import config from '../config/config.json';
+
+const wfPage = '6abe84b3182afe641eb8e351';
+---
+<BaseLayout title={`Not Found - ${config.site.titleSuffix}`} wfPage={wfPage} noindex>
+  <Header />
+  <NotFound />
+  <Footer wfPage={wfPage} />
+</BaseLayout>

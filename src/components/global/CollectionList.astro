@@ -1,0 +1,31 @@
+---
+/**
+ * Webflow Collection List wrapper (.w-dyn-list > .w-dyn-items > .w-dyn-item, or .w-dyn-empty when empty).
+ * Keeps the exact wrapper classes the Webflow CSS targets. Render each item through the default slot
+ * function:  <CollectionList items={posts} ...>{(post) => <BlogCard post={post} />}</CollectionList>
+ */
+interface Props {
+  items: unknown[];
+  /** Classes of the .w-dyn-list wrapper (without w-dyn-list) */
+  wrapperClass: string;
+  /** Classes of the .w-dyn-items list (without w-dyn-items) */
+  listClass: string;
+  /** Classes of each .w-dyn-item (without w-dyn-item) */
+  itemClass: string;
+  /** Extra attributes for the .w-dyn-items element (e.g. IX3 scroll trigger) */
+  listAttrs?: Record<string, string>;
+}
+const { items, wrapperClass, listClass, itemClass, listAttrs = {} } = Astro.props;
+const html = items.length ? await Promise.all(items.map((item, i) => Astro.slots.render('default', [item, i]))) : [];
+---
+<div class={`${wrapperClass} w-dyn-list`}>
+  {items.length > 0 ? (
+    <div {...listAttrs} role="list" class={`${listClass} w-dyn-items`}>
+      {html.map((h) => <div role="listitem" class={`${itemClass} w-dyn-item`} set:html={h} />)}
+    </div>
+  ) : (
+    <div class="w-dyn-empty">
+      <div>No items found.</div>
+    </div>
+  )}
+</div>

@@ -1,0 +1,45 @@
+---
+/**
+ * Service card (thumbnail, number, title, summary, "Explore Service" button).
+ * layout="tab":  home page sticky service tabs (.service-tabs-content-block)
+ * layout="card": services listing page (.service-card-item-block)
+ */
+import PrimaryButton from '../global/PrimaryButton.astro';
+import type { Service } from '../../lib/cms';
+
+interface Props {
+  service: Service;
+  layout?: 'tab' | 'card';
+  /** Adds the IX3 scroll-reveal attribute (home tabs 2–4). */
+  scrollReveal?: boolean;
+}
+const { service, layout = 'tab', scrollReveal = false } = Astro.props;
+const href = `/service/${service.slug}`;
+---
+<div class={layout === 'tab' ? 'service-tabs-content-block' : 'service-card-item-block'}>
+  <div class="service-tab-image-block">
+    <a href={href} class="service-image-link w-inline-block">{service.thumbnail && <img loading="lazy" src={service.thumbnail.url} alt={service.thumbnail.alt} class="service-tab-image" />}</a>
+  </div>
+  <div class="service-tab-content-wrapper">
+    <div scroll={scrollReveal ? 'scroll interaction' : undefined} class="service-item-content-block">
+      <div class="service-heading-block">
+        <div class="service-subtitle-block">
+          <div class="service-number">{service.number}</div>
+        </div>
+        <div class="service-title-block">
+          <a aria-label={layout === 'card' ? 'service-title-link' : undefined} href={href} class="service-title-link w-inline-block">
+            <div class="service-header">{service.title}</div>
+          </a>
+        </div>
+      </div>
+      <div class="service-bottom-block">
+        <div class="section-summary-block">
+          <p class="text-size-regular">{service.summary}</p>
+        </div>
+        <div class="service-button-block">
+          <PrimaryButton href={href} text="Explore Service" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

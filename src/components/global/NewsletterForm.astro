@@ -1,0 +1,25 @@
+---
+/**
+ * Footer newsletter form. Keeps the Webflow `w-form` markup (form + .w-form-done + .w-form-fail);
+ * submission is handled by src/scripts/forms.ts (endpoint: PUBLIC_FORM_ENDPOINT).
+ */
+import config from '../../config/config.json';
+
+interface Props {
+  /** Webflow page id of the current page (kept for the IX3 runtime). */
+  wfPage: string;
+}
+const { wfPage } = Astro.props;
+const n = config.newsletter;
+---
+<div class="footer-newsletter-form w-form">
+  <form id="email-form" name="email-form" data-name="Email Form" method="get" class="newsletter-form-inner" data-wf-page-id={wfPage} data-wf-element-id="2ef3f2fa-0b70-f6a3-3f70-528ca3ccd15d" data-form="newsletter">
+    <div class="newsletter-form-content"><input class="newsletter-form-field w-input" maxlength="256" name="email" data-name="Email" aria-label="newsletter-form-field" placeholder={n.placeholder} type="email" id="email" required="" /><input type="submit" data-wait="" class="newsletter-form-button w-button" value={n.button} /></div>
+  </form>
+  <div class="success-message w-form-done">
+    <div>{n.success}</div>
+  </div>
+  <div class="error-message w-form-fail">
+    <div>{n.error}</div>
+  </div>
+</div>

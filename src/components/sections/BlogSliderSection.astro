@@ -1,0 +1,59 @@
+---
+/**
+ * Three blog cards: a grid on desktop and a one-card-per-slide Webflow slider on mobile.
+ * Used on the home page ("Insights for Smarter Decisions…") and on blog posts ("Similar Insight").
+ */
+import PrimaryButton from '../global/PrimaryButton.astro';
+import SliderControls from '../global/SliderControls.astro';
+import CollectionList from '../global/CollectionList.astro';
+import BlogCard from '../cards/BlogCard.astro';
+import type { Blog } from '../../lib/cms';
+
+interface Props {
+  title: string;
+  posts: Blog[];
+  buttonText?: string;
+  buttonHref?: string;
+}
+const { title, posts, buttonText = 'View All Blog', buttonHref = '/blog' } = Astro.props;
+const cards = posts.slice(0, 3);
+// The template's mobile slider shows the 2nd post first, then the 1st and the 3rd.
+const slides = [cards[1], cards[0], cards[2]].filter(Boolean);
+---
+<section class="section-decisions">
+  <div class="section-gap is-none-blog">
+    <div class="w-layout-blockcontainer container-main w-container">
+      <div class="desisions-wrapper">
+        <div class="decisions-header-wrapper">
+          <div class="section-heading-block bottom-sps-btwn">
+            <div class="section-title-block max-width-36-75rem">
+              <h2 class="heading-style-2">{title}</h2>
+            </div>
+            <div delay-02="" class="decisions-button-block">
+              <PrimaryButton href={buttonHref} text={buttonText} />
+            </div>
+          </div>
+        </div>
+        <div class="blog-content-wrapper desktop">
+          <CollectionList items={cards} wrapperClass="blog-collection-list-wrapper" listClass="blog-collection-list" itemClass="blog-collection-item" listAttrs={{ scroll: 'scroll interaction' }}>
+            {(post: Blog) => <BlogCard post={post} layout="grid" />}
+          </CollectionList>
+        </div>
+        <div class="blog-content-wrapper mobile">
+          <div data-delay="4000" data-animation="slide" class="blog-slider-block w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
+            <div class="blog-slider-mask w-slider-mask">
+              {slides.map((post) => (
+                <div class="blog-slider w-slide">
+                  <CollectionList items={[post]} wrapperClass="blog-collection-list-wrapper" listClass="blog-collection-list" itemClass="blog-collection-item">
+                    {(p: Blog) => <BlogCard post={p} layout="slider" />}
+                  </CollectionList>
+                </div>
+              ))}
+            </div>
+            <SliderControls />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

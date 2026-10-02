@@ -1,0 +1,194 @@
+[
+  {
+    "title": "Goal & Performance Planning",
+    "slug": "goal-performance-planning",
+    "order": 1,
+    "number": "//01",
+    "summary": "Develop comprehensive action plans, focus on the most important tasks, and maintain accountability to successfully reach significant personal and professional objectives.",
+    "thumbnail": {
+      "url": "/cms/service-thumbnail-2.webp",
+      "alt": "service-tab-image"
+    },
+    "banner": {
+      "url": "/cms/service-banner-image-1-1.webp",
+      "alt": "service-hero-image"
+    },
+    "heroSummary": "Gain clear direction, practical guidance, and confident decision-making support for your personal or professional challenges.",
+    "overview": "No matter if you're dealing with career uncertainty, personal hurdles, or significant life choices, this process is designed to help you find clarity and alleviate feelings of being overwhelmed. It guides you through each step, ensuring you feel more confident and prepared to tackle whatever comes your way.",
+    "description": "Sometimes the hardest part isn’t taking action it’s knowing which direction to take. This consulting service is designed to help you organize your thoughts, understand your situation clearly, and make confident decisions with a structured approach.",
+    "audienceOne": "<h3>Professionals Feeling Stuck</h3><p>Struggling to move forward or uncertain about your next step.</p>",
+    "audienceTwo": "<h3>Career Transition Seekers</h3><p>Looking for clarity while changing careers or exploring opportunities.</p>",
+    "audienceThree": "<h3>Entrepreneurs &amp;Founders</h3><p>Managing pressure, responsibilities, and important business decisions.</p>",
+    "audienceFour": "<h3>Individuals Seeking Personal Growth</h3><p>Wanting better focus, confidence, and direction in everyday life.</p>",
+    "gallery": [
+      {
+        "url": "/cms/service-details-sm-image.jpg",
+        "alt": "service-image"
+      },
+      {
+        "url": "/cms/service-details-lg-image.jpg",
+        "alt": "service-image"
+      }
+    ]
+  },
+  {
+    "title": "Leadership Development",
+    "slug": "leadership-development",
+    "order": 2,
+    "number": "//02",
+    "summary": "Assist both new and seasoned leaders in enhancing their decision-making, communication, and team management abilities, empowering them to lead with assurance and clarity.",
+    "thumbnail": {
+      "url": "/cms/service-thumbnail-1-2.webp",
+      "alt": "service-tab-image"
+    },
+    "banner": {
+      "url": "/cms/service-banner-image-1.webp",
+      "alt": "service-hero-image"
+    },
+    "heroSummary": "Gain clear direction, practical guidance, and confident decision-making support for your personal or professional challenges.",
+    "overview": "No matter if you're dealing with career uncertainty, personal hurdles, or significant life choices, this process is designed to help you find clarity and alleviate feelings of being overwhelmed. It guides you through each step, ensuring you feel more confident and prepared to tackle whatever comes your way.",
+    "description": "Sometimes the hardest part isn’t taking action it’s knowing which direction to take. This consulting service is designed to help you organize your thoughts, understand your situation clearly, and make confident decisions with a structured approach.",
+    "audienceOne": "<h3>Professionals Feeling Stuck</h3><p>Struggling to move forward or uncertain about your next step.</p>",
+    "audienceTwo": "<h3>Career Transition Seekers</h3><p>Looking for clarity while changing careers or exploring opportunities.</p>",
+    "audienceThree": "<h3>Entrepreneurs &amp;Founders</h3><p>Managing pressure, responsibilities, and important business decisions.</p>",
+    "audienceFour": "<h3>Individuals Seeking Personal Growth</h3><p>Wanting better focus, confidence, and direction in everyday life.</p>",
+    "gallery": [
+      {
+        "url": "/cms/service-details-sm-image.jpg",
+        "alt": "service-image"
+      },
+      {
+        "url": "/cms/service-details-lg-image.jpg",
+        "alt": "service-image"
+      }
+    ]
+  },
+  {
+    "title": "Clarity & Decision Consulting",
+    "slug": "clarity-decision-consulting",
+    "order": 3,
+    "number": "//03",
+    "summary": "One-on-one sessions designed to help you break through confusion, evaluate options with clarity, and make confident decisions aligned with your long-term personal and professional goals.",
+    "thumbnail": {
+      "url": "/cms/service-thumbnail-4.webp",
+      "alt": "service-tab-image"
+    },
+    "banner": {
+      "url": "/cms/service-image.webp",
+      "alt": "service-hero-image"
+    },
+    "heroSummary": "Gain clear direction, practical guidance, and confident decision-making support for your personal or professional challenges.",
+    "overview": "No matter if you're dealing with career uncertainty, personal hurdles, or significant life choices, this process is designed to help you find clarity and alleviate feelings of being overwhelmed. It guides you through each step, ensuring you feel more confident and prepared to tackle whatever comes your way.",
+    "description": "Sometimes the hardest part isn’t taking action it’s knowing which direction to take. This consulting service is designed to help you organize your thoughts, understand your situation clearly, and make confident decisions with a structured approach.",
+    "audienceOne": "<h3>Professionals Feeling Stuck</h3><p>Struggling to move forward or uncertain about your next step.</p>",
+    "audienceTwo": "<h3>Career Transition Seekers</h3><p>Looking for clarity while changing careers or exploring opportunities.</p>",
+    "audienceThree": "<h3>Entrepreneurs &amp;Founders</h3><p>Managing pressure, responsibilities, and important business decisions.</p>",
+    "audienceFour": "<h3>Individuals Seeking Personal Growth</h3><p>Wanting better focus, confidence, and direction in everyday life.</p>",
+    "gallery": [
+      {
+        "url": "/cms/service-details-sm-image.jpg",
+        "alt": "service-image"
+      },
+      {
+        "url": "/cms/service-details-lg-image.jpg",
+        "alt": "service-image"
+      }
+    ]
+  },
+  {
+    "title": "Strategic Career Direction",
+    "slug": "strategic-career-direction",
+    "order": 4,
+    "number": "//04",
+    "summary": "Guided support for professionals seeking direction, growth, or transition helping you identify opportunities, refine your path, and build a clear, structured plan for sustainable career progression.",
+    "thumbnail": {
+      "url": "/cms/service-thumbnail-3-1.webp",
+      "alt": "service-tab-image"
+    },
+    "banner": {
+      "url": "/cms/service-banner-image-2-1.webp",
+      "alt": "service-hero-image"
+    },
+    "heroSummary": "Gain clear direction, practical guidance, and confident decision-making support for your personal or professional challenges.",
+    "overview": "No matter if you're dealing with career uncertainty, personal hurdles, or significant life choices, this process is designed to help you find clarity and alleviate feelings of being overwhelmed. It guides you through each step, ensuring you feel more confident and prepared to tackle whatever comes your way.",
+    "description": "Sometimes the hardest part isn’t taking action it’s knowing which direction to take. This consulting service is designed to help you organize your thoughts, understand your situation clearly, and make confident decisions with a structured approach.",
+    "audienceOne": "<h3>Professionals Feeling Stuck</h3><p>Struggling to move forward or uncertain about your next step.</p>",
+    "audienceTwo": "<h3>Career Transition Seekers</h3><p>Looking for clarity while changing careers or exploring opportunities.</p>",
+    "audienceThree": "<h3>Entrepreneurs &amp;Founders</h3><p>Managing pressure, responsibilities, and important business decisions.</p>",
+    "audienceFour": "<h3>Individuals Seeking Personal Growth</h3><p>Wanting better focus, confidence, and direction in everyday life.</p>",
+    "gallery": [
+      {
+        "url": "/cms/service-details-sm-image.jpg",
+        "alt": "service-image"
+      },
+      {
+        "url": "/cms/service-details-lg-image.jpg",
+        "alt": "service-image"
+      }
+    ]
+  },
+  {
+    "title": "Business & Growth Advisory",
+    "slug": "business-growth-advisory",
+    "order": 5,
+    "number": "//05",
+    "summary": "Practical consulting for founders and business owners to navigate challenges, improve decision-making, and develop strategies that support scalable growth, operational clarity, and long-term business success.",
+    "thumbnail": {
+      "url": "/cms/service-thumbnail-2-3.webp",
+      "alt": "service-tab-image"
+    },
+    "banner": {
+      "url": "/cms/service-banner-image-2.webp",
+      "alt": "service-hero-image"
+    },
+    "heroSummary": "Gain clear direction, practical guidance, and confident decision-making support for your personal or professional challenges.",
+    "overview": "No matter if you're dealing with career uncertainty, personal hurdles, or significant life choices, this process is designed to help you find clarity and alleviate feelings of being overwhelmed. It guides you through each step, ensuring you feel more confident and prepared to tackle whatever comes your way.",
+    "description": "Sometimes the hardest part isn’t taking action it’s knowing which direction to take. This consulting service is designed to help you organize your thoughts, understand your situation clearly, and make confident decisions with a structured approach.",
+    "audienceOne": "<h3>Professionals Feeling Stuck</h3><p>Struggling to move forward or uncertain about your next step.</p>",
+    "audienceTwo": "<h3>Career Transition Seekers</h3><p>Looking for clarity while changing careers or exploring opportunities.</p>",
+    "audienceThree": "<h3>Entrepreneurs &amp;Founders</h3><p>Managing pressure, responsibilities, and important business decisions.</p>",
+    "audienceFour": "<h3>Individuals Seeking Personal Growth</h3><p>Wanting better focus, confidence, and direction in everyday life.</p>",
+    "gallery": [
+      {
+        "url": "/cms/service-details-sm-image.jpg",
+        "alt": "service-image"
+      },
+      {
+        "url": "/cms/service-details-lg-image.jpg",
+        "alt": "service-image"
+      }
+    ]
+  },
+  {
+    "title": "Mindset & Performance Coaching",
+    "slug": "mindset-performance-coaching",
+    "order": 6,
+    "number": "//06",
+    "summary": "Focused sessions to help you overcome mental barriers, build confidence, and develop a stronger mindset so you can take consistent action, stay accountable, and achieve meaningful progress.",
+    "thumbnail": {
+      "url": "/cms/service-thumbnail-1-4.webp",
+      "alt": "service-tab-image"
+    },
+    "banner": {
+      "url": "/cms/service-banner-image-1-2.webp",
+      "alt": "service-hero-image"
+    },
+    "heroSummary": "Gain clear direction, practical guidance, and confident decision-making support for your personal or professional challenges.",
+    "overview": "No matter if you're dealing with career uncertainty, personal hurdles, or significant life choices, this process is designed to help you find clarity and alleviate feelings of being overwhelmed. It guides you through each step, ensuring you feel more confident and prepared to tackle whatever comes your way.",
+    "description": "Sometimes the hardest part isn’t taking action it’s knowing which direction to take. This consulting service is designed to help you organize your thoughts, understand your situation clearly, and make confident decisions with a structured approach.",
+    "audienceOne": "<h3>Professionals Feeling Stuck</h3><p>Struggling to move forward or uncertain about your next step.</p>",
+    "audienceTwo": "<h3>Career Transition Seekers</h3><p>Looking for clarity while changing careers or exploring opportunities.</p>",
+    "audienceThree": "<h3>Entrepreneurs &amp;Founders</h3><p>Managing pressure, responsibilities, and important business decisions.</p>",
+    "audienceFour": "<h3>Individuals Seeking Personal Growth</h3><p>Wanting better focus, confidence, and direction in everyday life.</p>",
+    "gallery": [
+      {
+        "url": "/cms/service-details-sm-image.jpg",
+        "alt": "service-image"
+      },
+      {
+        "url": "/cms/service-details-lg-image.jpg",
+        "alt": "service-image"
+      }
+    ]
+  }
+]

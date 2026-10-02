@@ -1,0 +1,48 @@
+{
+  "name": "atraen-strapi",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Strapi 5 CMS for the Atraen Astro theme (blogs + services, MCP enabled).",
+  "scripts": {
+    "build": "strapi build",
+    "console": "strapi console",
+    "deploy": "strapi deploy",
+    "dev": "strapi develop",
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "strapi": "strapi",
+    "upgrade": "npx @strapi/upgrade latest",
+    "upgrade:dry": "npx @strapi/upgrade latest --dry",
+    "seed": "node scripts/seed.js",
+    "seed:reset": "node scripts/seed.js --reset"
+  },
+  "dependencies": {
+    "@strapi/database": "5.56.0",
+    "@strapi/plugin-users-permissions": "5.56.0",
+    "@strapi/strapi": "5.56.0",
+    "better-sqlite3": "12.8.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.30.3",
+    "styled-components": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=20.0.0 <=26.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "1fff4341-dd6b-4496-9f81-8e897f1d2f69",
+    "installId": "ac7c902cca2e7ceb8ca98b7c80778a905c1caef2d6c51096e74d32fe3aab83a7"
+  },
+  "allowScripts": {
+    "better-sqlite3": true,
+    "@swc/core": true,
+    "esbuild": true
+  }
+}

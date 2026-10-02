@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/global/Header.astro';
+import Footer from '../../components/global/Footer.astro';
+import ServiceHero from '../../components/sections/service-detail/ServiceHero.astro';
+import ServiceDetails from '../../components/sections/service-detail/ServiceDetails.astro';
+import ServiceDesign from '../../components/sections/service-detail/ServiceDesign.astro';
+import TestimonialSection from '../../components/sections/TestimonialSection.astro';
+import FaqSection from '../../components/sections/FaqSection.astro';
+import { getServices, type Service } from '../../lib/cms';
+
+export async function getStaticPaths() {
+  const services = await getServices();
+  return services.map((service) => ({ params: { slug: service.slug }, props: { service } }));
+}
+
+interface Props {
+  service: Service;
+}
+const { service } = Astro.props;
+const wfPage = '6abe84b3182afe641eb8e34a';
+---
+<BaseLayout title={service.title} description={service.heroSummary} image={service.banner?.url} wfPage={wfPage}>
+  <div class="page-wrapper">
+    <Header />
+    <div class="main-wrapper">
+      <ServiceHero service={service} />
+      <ServiceDetails service={service} />
+      <ServiceDesign service={service} />
+      <TestimonialSection />
+      <FaqSection />
+    </div>
+    <Footer wfPage={wfPage} />
+  </div>
+</BaseLayout>

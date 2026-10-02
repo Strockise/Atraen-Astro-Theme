@@ -1,0 +1,101 @@
+---
+/**
+ * Site footer: newsletter, contact details, page links, logo, social icons, copyright.
+ * variant 1 = default, variant 2 = alternative background (contact page).
+ * Links: src/config/menu.json → footer. Contact, social, copyright: src/config/config.json.
+ */
+import config from '../../config/config.json';
+import menu from '../../config/menu.json';
+import NewsletterForm from './NewsletterForm.astro';
+import SocialIcon from './SocialIcon.astro';
+import { isCurrent } from '../../lib/utils';
+
+interface Props {
+  variant?: 1 | 2;
+  wfPage: string;
+}
+const { variant = 1, wfPage } = Astro.props;
+const v = variant === 2 ? 'w-variant-8f5bb21c-4d72-e6d8-d439-0233833a3a0b' : undefined;
+const path = Astro.url.pathname;
+const { site, contact, social, newsletter, copyright } = config;
+const f = menu.footer;
+const homeCurrent = isCurrent('/', path);
+---
+<footer data-wf--footer--variant={`variant-${variant}`} class:list={['section-footer', v]}>
+  <div class:list={['footer-bg-color', v]}>
+    <div class="w-layout-blockcontainer container-fluid w-container">
+      <div class="footer-wrapper">
+        <div delay-02="" class="footer-content-block">
+          <div class="footer-content-wrap">
+            <div class="footer-main-content-block">
+              <div class="footer-info-content-block">
+                <div class="footer-summary-block">
+                  <p class="body-text-base">{newsletter.eyebrow}</p>
+                  <div class="footer-header-block">
+                    <h2 class="footer-header">{newsletter.title}</h2>
+                  </div>
+                </div>
+                <div class="footer-newsletter-block">
+                  <NewsletterForm wfPage={wfPage} />
+                </div>
+              </div>
+              <div class="footer-link-content-block">
+                <div class="footer-link-block">
+                  <div class="footer-link-text">{f.contactTitle}</div>
+                  <div class="footer-link-wrap">
+                    <a href={contact.phoneHref} class="footer-link">{contact.phone}</a>
+                    <a href={`mailto:${contact.email}`} class="footer-link">{contact.email}</a>
+                  </div>
+                </div>
+                <div class="footer-page-link-block">
+                  <div class="footer-link-block">
+                    <div class="footer-link-text">{f.pagesTitle}</div>
+                    <div class="footer-link-wrap">
+                      {f.pages.map((l) => {
+                        const current = isCurrent(l.href, path);
+                        return <a href={l.href} aria-current={current ? 'page' : undefined} class:list={['footer-link', current && 'w--current']}>{l.label}</a>;
+                      })}
+                    </div>
+                  </div>
+                  <div class="footer-contact-info-block">
+                    <div class="footer-link-text">{f.utilityTitle}</div>
+                    <div class="footer-contact-single-block">
+                      <div class="footer-link-wrap">
+                        {f.utility.map((l) => {
+                          const current = isCurrent(l.href, path);
+                          return <a href={l.href} aria-current={current ? 'page' : undefined} class:list={['footer-link', current && 'w--current']}>{l.label}</a>;
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-logo-content-block">
+            <a href="/" aria-current={homeCurrent ? 'page' : undefined} class:list={['footer-brand-name w-inline-block', homeCurrent && 'w--current']}><img loading="lazy" src={site.footerLogo} alt="footer-logo" class="footer-logo" /></a>
+            <div class="footer-social-info-block">
+              {social.map((s) => (
+                <a aria-label={s.name} href={s.url} target="_blank" rel="noopener" class="footer-social-icon-block w-inline-block">
+                  <div class="footer-social-icon w-embed"><SocialIcon name={s.icon} /></div>
+                </a>
+              ))}
+            </div>
+          </div>
+          <div class="footer-line"></div>
+          <div class="footer-bottom-block">
+            <div class="footer-bottom-content-block">
+              <div class="footer-bottom-link-block">
+                {f.bottom.map((l) => <a href={l.href} class="footer-link">{l.label}</a>)}
+              </div>
+              <div class="copyright-text-block">
+                <p class="paragraph-small">{copyright.text}<a href={copyright.linkUrl} target="_blank" rel="noopener" class="footer-link">{copyright.linkLabel}</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

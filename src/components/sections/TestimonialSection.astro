@@ -1,0 +1,71 @@
+---
+/**
+ * Testimonial slider (Webflow "cross" fade slider). Content: src/data/testimonials.json.
+ */
+import QuoteIcon from '../global/QuoteIcon.astro';
+import data from '../../data/testimonials.json';
+
+interface Props {
+  title?: string;
+  summary?: string;
+  items?: typeof data.items;
+}
+const { title = data.title, summary = data.summary, items = data.items } = Astro.props;
+---
+<section class="section_testimonial">
+  <div class="section-gap">
+    <div class="w-layout-blockcontainer container-main w-container">
+      <div class="testimonial-wrapper">
+        <div class="section-heading-block bottom-sps-btwn bottom-liner">
+          <div class="section-title-block max-width-30-25rem">
+            <h2 class="heading-style-2">{title}</h2>
+          </div>
+          <div delay-02="" class="section-summary-block max-w-18-5rem">
+            <p class="text-size-large">{summary}</p>
+          </div>
+        </div>
+        <div class="testimonial-content-block">
+          <div data-delay="4000" data-animation="cross" class="testimonial-slider-block w-slider" data-autoplay="false" data-easing="ease" top-delay-4="" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
+            <div class="testimonial-slider-mask w-slider-mask">
+              {items.map((item, i) => (
+                <div class="testimonial-slider w-slide">
+                  <div scroll={i === 0 ? 'scroll interaction' : undefined} class="testimonial-content-wrapper">
+                    <div class="testimonial-image-block-large"><img loading="lazy" src={item.image} alt="testimonial-image" class="testimonial-image" /></div>
+                    <div class="testimonial-content-details">
+                      <div class="testimonial-details-wrap">
+                        <div class="testimonial-icon-block">
+                          <div class="testimonial-icon w-embed"><QuoteIcon /></div>
+                        </div>
+                        <div class="testimonial-details-block">
+                          <p class="testimonial-details">{item.quote}</p>
+                        </div>
+                      </div>
+                      <div class="testimonial-author-info">
+                        <div class="testimonial-author-name">{item.name}</div>
+                        <div class="testimonial-author-position">{item.role}</div>
+                      </div>
+                    </div>
+                    <div class="testimonial-image-block-small"><img loading="lazy" src={item.imageSmall} alt="testimonial-small-image" class="testimonial-small-image" /></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div class="testimonial-slider-arrow is-left w-slider-arrow-left">
+              <div class="testimonial-arrow-icon w-embed"><svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.99996 15L4 9.99996L9 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M4 10L16.6666 10.0002" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg></div>
+            </div>
+            <div class="testimonial-slider-arrow is-right w-slider-arrow-right">
+              <div class="testimonial-arrow-icon w-embed"><svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.6665 5L16.6665 10L11.6665 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M16.6665 10L3.99988 9.99975" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg></div>
+            </div>
+            <div class="testimonial-slider-nav w-slider-nav w-slider-nav-invert w-round"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

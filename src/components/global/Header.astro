@@ -1,0 +1,82 @@
+---
+/**
+ * Site header / navbar (Webflow `w-nav`, collapses below 991px into the slide-over menu).
+ *
+ * variant="absolute": transparent header over a full-bleed hero (home, services).
+ * variant="static":   regular header in the page flow (every other page).
+ *
+ * Menu items come from src/config/menu.json, the call-to-action from src/config/config.json.
+ */
+import config from '../../config/config.json';
+import menu from '../../config/menu.json';
+import PrimaryButton from './PrimaryButton.astro';
+import SecondaryButton from './SecondaryButton.astro';
+import { isCurrent } from '../../lib/utils';
+
+interface Props {
+  variant?: 'static' | 'absolute';
+}
+const { variant = 'static' } = Astro.props;
+const absolute = variant === 'absolute';
+// Webflow component-variant class: the CSS for the transparent header hangs off it.
+const v = absolute ? 'w-variant-89793ff4-7085-9a84-ccfb-f83b26aef541' : undefined;
+const path = Astro.url.pathname;
+const homeCurrent = isCurrent('/', path);
+const { site, cta } = config;
+---
+<header data-wf--header--variant={variant} data-wf-component-id="9b58e1e6-5635-6120-15a4-bbe8f84036f1" data-wf-variant-state={absolute ? '89793ff4-7085-9a84-ccfb-f83b26aef541' : 'base'} class:list={['section_header', v]}>
+  <div data-animation="over-right" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
+    <div class="nav-inner-block">
+      <div class="container-main w-container">
+        <div class:list={['nav-content-block', v]}>
+          <a href="/" aria-current={homeCurrent ? 'page' : undefined} class:list={['brand-logo-block w-nav-brand', homeCurrent && 'w--current']}><img loading="lazy" src={site.logoLight} alt={`${site.name} Logo`} class:list={['brand-logo white', v]} /><img loading="lazy" src={site.logoDark} alt={`${site.name} Logo`} class:list={['brand-logo dark', v]} /></a>
+          <nav role="navigation" class="nav-menu-content w-nav-menu">
+            <div class:list={['nav-link-block', v]}>
+              <div class="nav-top-block">
+                <a href="/" aria-current={homeCurrent ? 'page' : undefined} class:list={['brand-logo-block w-nav-brand', homeCurrent && 'w--current']}><img loading="lazy" src={site.logoLight} alt={`${site.name} Logo`} class:list={['brand-logo white', v]} /><img loading="lazy" src={site.logoDark} alt={`${site.name} Logo`} class:list={['brand-logo dark', v]} /></a>
+                <div class="menu-button-block">
+                  <div class="menu-button w-nav-button">
+                    <div class="menu-button-icon">
+                      <div class="menu-button-line is-01"></div>
+                      <div class="menu-button-line is-02"></div>
+                      <div class="menu-button-line is-03"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {menu.main.map((item) => {
+                const current = isCurrent(item.href, path);
+                return (
+                  <a href={item.href} aria-current={current ? 'page' : undefined} class:list={['nav-link', v, 'w-inline-block', current && 'w--current']}>
+                    <div class="nav-link-text is-01">{item.label}</div>
+                    <div class="nav-link-text is-02">{item.label}</div>
+                  </a>
+                );
+              })}
+              <div class="general-button-block is-1">
+                <PrimaryButton href={cta.href} text={cta.label} />
+              </div>
+            </div>
+          </nav>
+          <div class="nav-button-block">
+            <div class:list={['general-button-block is-2 dark', v]}>
+              <SecondaryButton href={cta.href} text={cta.label} />
+            </div>
+            <div class:list={['general-button-block is-2 white', v]}>
+              <PrimaryButton href={cta.href} text={cta.label} />
+            </div>
+            <div class="menu-button-block">
+              <div class="menu-button w-nav-button">
+                <div class="menu-button-icon">
+                  <div class="menu-button-line is-01"></div>
+                  <div class="menu-button-line is-02"></div>
+                  <div class="menu-button-line is-03"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

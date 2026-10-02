@@ -1,0 +1,29 @@
+{
+  "main": [
+    { "label": "Home", "href": "/" },
+    { "label": "about", "href": "/about" },
+    { "label": "services", "href": "/service" },
+    { "label": "blog", "href": "/blog" },
+    { "label": "contact", "href": "/contact" }
+  ],
+  "footer": {
+    "contactTitle": "Contacts us",
+    "pagesTitle": "Pages",
+    "pages": [
+      { "label": "Home", "href": "/" },
+      { "label": "About", "href": "/about" },
+      { "label": "Service", "href": "/service" },
+      { "label": "Blog", "href": "/blog" },
+      { "label": "Contact", "href": "/contact" }
+    ],
+    "utilityTitle": "Utility Page",
+    "utility": [
+      { "label": "Style Guide", "href": "/style-guide" },
+      { "label": "404", "href": "/404" }
+    ],
+    "bottom": [
+      { "label": "Service Details", "href": "/service/clarity-decision-consulting" },
+      { "label": "Blog Details", "href": "/blog/how-to-make-better-decisions-without-overthinking-every-step" }
+    ]
+  }
+}

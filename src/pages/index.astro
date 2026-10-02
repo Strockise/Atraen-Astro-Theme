@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/global/Header.astro';
+import Footer from '../components/global/Footer.astro';
+import Hero from '../components/sections/home/Hero.astro';
+import Logo from '../components/sections/home/Logo.astro';
+import About from '../components/sections/home/About.astro';
+import Service from '../components/sections/home/Service.astro';
+import WhyChoose from '../components/sections/home/WhyChoose.astro';
+import Process from '../components/sections/home/Process.astro';
+import RealResult from '../components/sections/home/RealResult.astro';
+import TestimonialSection from '../components/sections/TestimonialSection.astro';
+import BlogSliderSection from '../components/sections/BlogSliderSection.astro';
+import FaqSection from '../components/sections/FaqSection.astro';
+import config from '../config/config.json';
+import { getBlogs, getServices } from '../lib/cms';
+
+const wfPage = '6abe84b3182afe641eb8e343';
+const [services, posts] = await Promise.all([getServices(), getBlogs()]);
+---
+<BaseLayout title={`${config.site.name} - ${config.site.titleSuffix}`} wfPage={wfPage}>
+  <div class="page-wrapper">
+    <Header variant="absolute" />
+    <main class="main-wrapper">
+      <Hero />
+      <Logo />
+      <About />
+      <Service services={services} />
+      <WhyChoose />
+      <Process />
+      <RealResult />
+      <TestimonialSection />
+      <BlogSliderSection title="Insights for Smarter Decisions & Sustainable Growth" posts={posts} />
+      <FaqSection />
+    </main>
+    <Footer wfPage={wfPage} />
+  </div>
+</BaseLayout>

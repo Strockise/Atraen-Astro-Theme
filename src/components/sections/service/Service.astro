@@ -1,0 +1,22 @@
+---
+/** Services listing: every service as a card (thumbnail, number, title, summary, button). */
+import CollectionList from '../../global/CollectionList.astro';
+import ServiceCard from '../../cards/ServiceCard.astro';
+import type { Service } from '../../../lib/cms';
+
+interface Props {
+  services: Service[];
+}
+const { services } = Astro.props;
+---
+<section class="section-service">
+  <div class="section-gap">
+    <div class="w-layout-blockcontainer container-main w-container">
+      <div class="service-wrapper">
+        <CollectionList items={services} wrapperClass="service-cms-collection-block" listClass="service-collection-list" itemClass="service-cms-collection-item">
+          {(service: Service) => <ServiceCard service={service} layout="card" />}
+        </CollectionList>
+      </div>
+    </div>
+  </div>
+</section>

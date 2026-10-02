@@ -1,0 +1,24 @@
+---
+/** White "secondary" button with the sliding-arrow hover (site-wide IX3 hover on `.secondary-button`). */
+import ArrowIcon from './ArrowIcon.astro';
+import { isCurrent } from '../../lib/utils';
+
+interface Props {
+  href: string;
+  text: string;
+  current?: boolean;
+}
+const { href, text } = Astro.props;
+const current = Astro.props.current ?? isCurrent(href, Astro.url.pathname);
+---
+<a href={href} aria-current={current ? 'page' : undefined} class:list={['secondary-button w-inline-block', current && 'w--current']}>
+  <div class="button-arrow is-left secondary">
+    <div class="button-arrow-icon w-embed"><ArrowIcon /></div>
+  </div>
+  <div class="button-text-block secondary">
+    <div class="button-text text-color-black">{text}</div>
+  </div>
+  <div class="button-arrow is-right secondary">
+    <div class="button-arrow-icon w-embed"><ArrowIcon /></div>
+  </div>
+</a>

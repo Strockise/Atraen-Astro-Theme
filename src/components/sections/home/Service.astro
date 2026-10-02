@@ -1,0 +1,58 @@
+---
+/**
+ * Home 'How I Can Help You': sticky tab labels + four service collection lists (list n shows the n-th
+ * service by Strapi 'order'). The scroll-scrubbed tab switching is a Webflow IX3 interaction.
+ */
+import CollectionList from '../../global/CollectionList.astro';
+import ServiceCard from '../../cards/ServiceCard.astro';
+import type { Service } from '../../../lib/cms';
+
+interface Props {
+  services: Service[];
+}
+const { services } = Astro.props;
+---
+<section data-wf--section-service--variant="variant-01" data-wf-component-id="598ddb46-d1f4-8df7-212d-37edc4d2b033" data-wf-variant-state="base" class="section-service">
+  <div class="section-gap is-none">
+    <div class="w-layout-blockcontainer container-main w-container">
+      <div class="service-wrapper">
+        <div class="section-heading-block verticle">
+          <div top-delay-0="" class="section-subtitle-block">
+            <h2 class="section-subtitle">{'{'} Our Service {'}'}</h2>
+          </div>
+          <div class="section-title-block">
+            <h2 class="heading-style-2">How I Can Help You</h2>
+          </div>
+          <div top-delay-2="" class="section-summary-block max-width-25">
+            <p class="text-size-regular text-align-center">Focused consulting services designed to bring clarity, direction, and measurable progress.</p>
+          </div>
+        </div>
+        <div top-delay-2="" class="service-relative-block">
+          <div class="service-sticky-block">
+            <div class="service-tab-link-block">
+              <div class="service-tab-link is-1">
+                <div class="service-tab-link-text">1 - Personal</div>
+              </div>
+              <div class="service-tab-link is-2">
+                <div class="service-tab-link-text">2 - Career Strategy</div>
+              </div>
+              <div class="service-tab-link is-3">
+                <div class="service-tab-link-text">3 - Business</div>
+              </div>
+              <div class="service-tab-link is-4">
+                <div class="service-tab-link-text">4 - Growth &amp; Mindset</div>
+              </div>
+            </div>
+            <div class="service-collection-block">
+              {[0, 1, 2, 3].map((n) => (
+                <CollectionList items={services.slice(n, n + 1)} wrapperClass={`service-collection-list-wrapper is-${n + 1}`}listClass="service-collection-list" itemClass="service-collection-item">
+                  {(service: Service) => <ServiceCard service={service} layout="tab" scrollReveal={n > 0} />}
+                </CollectionList>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

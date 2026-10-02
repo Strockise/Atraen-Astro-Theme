@@ -1,0 +1,84 @@
+---
+/** 'Who this service is designed for': four rich-text cards (audienceOne…Four). */
+import type { Service } from '../../../lib/cms';
+
+interface Props {
+  service: Service;
+}
+const { service } = Astro.props;
+---
+<section class="service-design-section">
+  <div class="section-design-bg-color">
+    <div class="w-layout-blockcontainer container-main w-container">
+      <div scroll="scroll interaction" class="service-design-wrapper">
+        <div scroll="scroll interaction" class="service-header-block-two">
+          <div class="section-header-block max-width-23rem">
+            <h2 class="heading-style-2">Who This Service Is Designed For</h2>
+          </div>
+          <div class="section-summary-block max-width22-81rem">
+            <p class="body-text-base">This consulting service is ideal for individuals seeking clarity, direction, and confident decision-making in both personal and professional life.</p>
+          </div>
+        </div>
+        <div class="service-design-line"></div>
+        <div scroll="scroll interaction" class="service-design-content-block">
+          <div class="service-design-single-card">
+            <div class="service-design-icon-block">
+              <div class="service-design-icon w-embed"><svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.7645 5.9512L17.3532 5.23737C17.0421 4.69751 16.8865 4.42758 16.6219 4.31994C16.3573 4.21231 16.058 4.29724 15.4593 4.46711L14.4425 4.75352C14.0603 4.84165 13.6593 4.79166 13.3104 4.61237L13.0297 4.45039C12.7304 4.25874 12.5003 3.97615 12.3729 3.64399L12.0946 2.81284C11.9116 2.26282 11.8201 1.98781 11.6023 1.83052C11.3845 1.67322 11.0951 1.67322 10.5165 1.67322H9.58753C9.0089 1.67322 8.71959 1.67322 8.50177 1.83052C8.28396 1.98781 8.19247 2.26282 8.00949 2.81284L7.73119 3.64399C7.60379 3.97615 7.37363 4.25874 7.07439 4.45039L6.79366 4.61237C6.4447 4.79166 6.04374 4.84165 5.66157 4.75352L4.64471 4.46711C4.0461 4.29724 3.74679 4.21231 3.48214 4.31994C3.2175 4.42758 3.06196 4.69751 2.75088 5.23737L2.33956 5.9512C2.04797 6.45724 1.90217 6.71026 1.93047 6.97961C1.95876 7.24896 2.15394 7.46602 2.5443 7.90014L3.4035 8.86073C3.6135 9.12658 3.76259 9.58988 3.76259 10.0064C3.76259 10.4232 3.61355 10.8864 3.40352 11.1523L2.54431 12.1129C2.15395 12.547 1.95877 12.7641 1.93047 13.0334C1.90217 13.3028 2.04797 13.5558 2.33956 14.0618L2.75087 14.7756C3.06194 15.3155 3.2175 15.5854 3.48214 15.6931C3.7468 15.8007 4.04611 15.7158 4.64472 15.5459L5.66154 15.2595C6.04377 15.1713 6.44481 15.2213 6.79381 15.4007L7.0745 15.5627C7.37368 15.7544 7.60379 16.0369 7.73117 16.369L8.00949 17.2003C8.19247 17.7503 8.28396 18.0253 8.50177 18.1826C8.71959 18.3399 9.0089 18.3399 9.58753 18.3399H10.5165C11.0951 18.3399 11.3845 18.3399 11.6023 18.1826C11.8201 18.0253 11.9116 17.7503 12.0946 17.2003L12.3729 16.369C12.5003 16.0369 12.7304 15.7544 13.0295 15.5627L13.3102 15.4007C13.6592 15.2213 14.0603 15.1713 14.4425 15.2595L15.4593 15.5459C16.0579 15.7158 16.3573 15.8007 16.6219 15.6931C16.8866 15.5854 17.0421 15.3155 17.3532 14.7756L17.7645 14.0618C18.0561 13.5558 18.2019 13.3028 18.1736 13.0334C18.1453 12.7641 17.9501 12.547 17.5597 12.1129L16.7005 11.1523C16.4905 10.8864 16.3415 10.4232 16.3415 10.0064C16.3415 9.58988 16.4905 9.12658 16.7005 8.86073L17.5597 7.90014C17.9501 7.46602 18.1453 7.24896 18.1736 6.97961C18.2019 6.71026 18.0561 6.45724 17.7645 5.9512Z" stroke="white" stroke-width="1.2" stroke-linecap="round"></path>
+                  <path d="M7.08325 13.3333C7.66544 12.3269 8.75361 11.6498 9.99992 11.6498C11.2462 11.6498 12.3344 12.3269 12.9166 13.3333M11.6666 7.91667C11.6666 8.83714 10.9204 9.58333 9.99994 9.58333C9.07947 9.58333 8.33328 8.83714 8.33328 7.91667C8.33328 6.99619 9.07947 6.25 9.99994 6.25C10.9204 6.25 11.6666 6.99619 11.6666 7.91667Z" stroke="white" stroke-width="1.2" stroke-linecap="round"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="service-design-card-details">
+              <div class="service-details w-richtext" set:html={service.audience[0] ?? ''} />
+            </div>
+          </div>
+          <div class="service-design-single-card">
+            <div class="service-design-icon-block">
+              <div class="service-design-icon w-embed"><svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.8332 12.5C8.92345 17.5 3.57623 12.5 1.6665 17.5" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M12.9167 12.5H14.1677C16.1319 12.5 17.114 12.5 17.7242 11.8898C18.3344 11.2796 18.3344 10.2975 18.3344 8.33333V6.66667C18.3344 4.70248 18.3344 3.72039 17.7242 3.11019C17.114 2.5 16.1319 2.5 14.1677 2.5H10.8344C8.87023 2.5 7.88814 2.5 7.27794 3.11019C6.76093 3.6272 6.68198 4.4112 6.66992 5.83333" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <circle cx="6.24984" cy="10.4167" r="2.08333" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></circle>
+                  <path d="M10 5.83337H15M15 9.16671H12.5" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="service-design-card-details">
+              <div class="service-details w-richtext" set:html={service.audience[1] ?? ''} />
+            </div>
+          </div>
+          <div class="blank"></div>
+          <div class="blank"></div>
+          <div class="blank"></div>
+          <div class="blank"></div>
+          <div class="service-design-single-card">
+            <div class="service-design-icon-block">
+              <div class="service-design-icon w-embed"><svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 5.83333C13.6073 5.31007 11.8761 5 10 5C8.12393 5 6.39268 5.31007 5 5.83333" stroke="white" stroke-width="1.2" stroke-linecap="round"></path>
+                  <path d="M5.8335 5.83337V7.27102C5.8335 8.76539 6.60141 10.1502 7.85643 10.919L8.28518 11.1817C9.34078 11.8284 10.6595 11.8284 11.7151 11.1817L12.1439 10.919C13.3989 10.1502 14.1668 8.76539 14.1668 7.27102V5.83337" stroke="white" stroke-width="1.2" stroke-linecap="round"></path>
+                  <path d="M5.8335 6.66663V4.96339C5.8335 3.84261 6.60141 2.80401 7.85643 2.22738L8.28518 2.03039C9.34078 1.54537 10.6595 1.54537 11.7151 2.03039L12.1439 2.22738C13.3989 2.80401 14.1668 3.84261 14.1668 4.96339V6.66663" stroke="white" stroke-width="1.2" stroke-linecap="round"></path>
+                  <path d="M12.4998 10.8334L13.3332 13.3334M13.3332 13.3334L12.1925 14.3296C11.1476 15.2421 10.6252 15.6984 9.99984 15.6984C9.37451 15.6984 8.85207 15.2421 7.8072 14.3296L6.6665 13.3334M13.3332 13.3334L14.7783 13.8151C15.61 14.0923 16.0259 14.2309 16.395 14.4452C16.7564 14.655 17.0842 14.9179 17.3673 15.2252C17.6566 15.5391 18.3332 16.6667 18.3332 18.3334M7.49984 10.8334L6.6665 13.3334M6.6665 13.3334L5.22139 13.8151C4.38967 14.0923 3.97381 14.2309 3.60465 14.4452C3.24328 14.655 2.91552 14.9179 2.63236 15.2252C2.3431 15.5391 1.6665 16.6667 1.6665 18.3334" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="service-design-card-details">
+              <div class="service-details w-richtext" set:html={service.audience[2] ?? ''} />
+            </div>
+          </div>
+          <div class="service-design-single-card">
+            <div class="service-design-icon-block">
+              <div class="service-design-icon w-embed"><svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.3332 9.99996C18.3332 14.6023 14.6022 18.3333 9.99984 18.3333C5.39746 18.3333 1.6665 14.6023 1.6665 9.99996C1.6665 5.39758 5.39746 1.66663 9.99984 1.66663C14.6022 1.66663 18.3332 5.39758 18.3332 9.99996Z" stroke="white" stroke-width="1.2"></path>
+                  <path d="M3.3335 14.1667L7.15499 10.3452C7.71054 9.78962 7.98832 9.51187 8.3335 9.51187C8.67866 9.51187 8.95641 9.78962 9.512 10.3452L9.655 10.4882C10.2106 11.0438 10.4883 11.3215 10.8335 11.3215C11.1787 11.3215 11.4564 11.0438 12.012 10.4882L16.6668 5.83337" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="service-design-card-details">
+              <div class="service-details w-richtext" set:html={service.audience[3] ?? ''} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

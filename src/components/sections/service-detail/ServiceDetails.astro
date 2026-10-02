@@ -1,0 +1,42 @@
+---
+/** Service overview, description and image gallery (multi-image field). */
+import type { Service } from '../../../lib/cms';
+
+interface Props {
+  service: Service;
+}
+const { service } = Astro.props;
+---
+<section class="section-service-details">
+  <div class="section-gap">
+    <div class="w-layout-blockcontainer container-main w-container">
+      <div class="service-details-wrapper">
+        <div class="service-content-block">
+          <p class="service-details-text">{service.overview}</p>
+        </div>
+        <div scroll="scroll interaction" class="service-content-bottom">
+          <div class="service-summary-block">
+            <p class="body-text-base">{service.description}</p>
+          </div>
+          <div class="service-image-wrapper">
+            <div class="service-collection-list-wrapper w-dyn-list">
+              {service.gallery.length > 0 ? (
+                <div role="list" class="service-collection-list-two w-dyn-items">
+                  {service.gallery.map((image) => (
+                    <div role="listitem" class="service-collection-item w-dyn-item">
+                      <div class="service-image-block"><img src={image.url} loading="lazy" alt={image.alt} class="service-image image-hover-scale" /></div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div class="w-dyn-empty">
+                  <div>No items found.</div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

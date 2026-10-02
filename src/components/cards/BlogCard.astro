@@ -1,0 +1,43 @@
+---
+/**
+ * Blog post card (image, date, read time, title). Rendered inside a Webflow `.w-dyn-item`.
+ * layout="grid":   date then read time (desktop grids)
+ * layout="slider": read time then date (mobile sliders), as in the template.
+ */
+import { formatDate, type Blog } from '../../lib/cms';
+
+interface Props {
+  post: Blog;
+  layout?: 'grid' | 'slider';
+  /** Accessible label for the title link (used on the blog listing page). */
+  titleLabel?: string;
+}
+const { post, layout = 'grid', titleLabel } = Astro.props;
+const href = `/blog/${post.slug}`;
+const date = formatDate(post.date);
+---
+<div class="blog-singel-card">
+  <div class="blog-card-image-block">
+    <a href={href} class="blog-card-image-link w-inline-block">{post.mainImage && <img loading="lazy" src={post.mainImage.url} alt={post.mainImage.alt} class="blog-card-image" />}</a>
+  </div>
+  <div class="blog-card-details-block">
+    <div class="blog-card-details-top">
+      {layout === 'grid' ? (
+        <Fragment>
+          <div class="blog-date-text">{date}</div>
+          <div class="read-more-text">{post.readTime}</div>
+        </Fragment>
+      ) : (
+        <Fragment>
+          <div class="read-more-text">{post.readTime}</div>
+          <div class="blog-date-text">{date}</div>
+        </Fragment>
+      )}
+    </div>
+    <div class="blog-card-title-block">
+      <a aria-label={titleLabel} href={href} class="blog-card-title-link w-inline-block">
+        <h3 class="blog-card-title">{post.title}</h3>
+      </a>
+    </div>
+  </div>
+</div>

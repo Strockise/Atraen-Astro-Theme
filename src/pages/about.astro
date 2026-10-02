@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/global/Header.astro';
+import Footer from '../components/global/Footer.astro';
+import AboutHero from '../components/sections/about/AboutHero.astro';
+import Story from '../components/sections/about/Story.astro';
+import Philosophy from '../components/sections/about/Philosophy.astro';
+import Approach from '../components/sections/about/Approach.astro';
+import Principles from '../components/sections/about/Principles.astro';
+import FaqSection from '../components/sections/FaqSection.astro';
+import config from '../config/config.json';
+
+const wfPage = '6abe84b3182afe641eb8e346';
+---
+<BaseLayout title={`About - ${config.site.titleSuffix}`} wfPage={wfPage}>
+  <div class="page-wrapper">
+    <Header />
+    <div class="main-wrapper">
+      <AboutHero />
+      <Story />
+      <Philosophy />
+      <Approach />
+      <Principles />
+      <FaqSection />
+    </div>
+    <Footer wfPage={wfPage} />
+  </div>
+</BaseLayout>

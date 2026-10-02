@@ -1,0 +1,27 @@
+{
+  "name": "atraen-astro-theme",
+  "description": "Atraen: a personal consulting Astro theme with Strapi CMS.",
+  "type": "module",
+  "version": "1.0.0",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "strapi:install": "npm install --prefix strapi",
+    "strapi:dev": "npm run develop --prefix strapi",
+    "strapi:seed": "npm run seed --prefix strapi"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.3.5",
+    "marked": "^18.0.14"
+  },
+  "allowScripts": {
+    "esbuild": true
+  }
+}

@@ -1,0 +1,69 @@
+---
+/**
+ * FAQ accordion (Webflow tabs + IX3 click interaction). Content: src/data/faq.json.
+ * variant "base" = default spacing, "variant-2" = alternative spacing (blog, services).
+ */
+import PrimaryButton from '../global/PrimaryButton.astro';
+import data from '../../data/faq.json';
+
+interface Props {
+  variant?: 'base' | 'variant-2';
+  title?: string;
+  summary?: string;
+  items?: typeof data.items;
+}
+const { variant = 'base', title = data.title, summary = data.summary, items = data.items } = Astro.props;
+const alt = variant === 'variant-2';
+---
+<section data-wf--section-faq--variant={variant} data-wf-component-id="97acc66e-7a64-b362-f3ad-9b4fbc1be8fd" data-wf-variant-state={alt ? '7d015085-268a-4601-457e-85e731404d96' : 'base'} class="section-faq">
+  <div class:list={['section-gap bottom-none', alt && 'w-variant-7d015085-268a-4601-457e-85e731404d96']}>
+    <div class="faq-bg-color">
+      <div class="w-layout-blockcontainer container-main w-container">
+        <div class="faq-wrapper">
+          <div class="faq-content-grid">
+            <div scroll="scroll interaction" class="faq-content-left">
+              <div class="faq-header-block">
+                <h2>{title}</h2>
+                <p class="body-text-main">{summary}</p>
+              </div>
+              <div class="faq-button-block">
+                <PrimaryButton href="/contact" text="Let’s Collaborate" />
+              </div>
+            </div>
+            <div class="faq-content-wrapper">
+              <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100" class="faq-tabs-block w-tabs">
+                <div scroll="scroll interaction" class="faq-tabs-menu w-tab-menu">
+                  {items.map((item, i) => (
+                    <a data-w-tab={`Tab ${i + 1}`} class:list={['faq-tab-link w-inline-block w-tab-link', i === 0 && 'w--current']}>
+                      <div class="faq-tab-content-block">
+                        <div class="faq-content-top">
+                          <div class="faq-icon-block">
+                            <div class="faq-icon"></div>
+                            <div class="faq-icon is-01"></div>
+                          </div>
+                          <div class="faq-question-block">
+                            <div class="faq-question">{item.question}</div>
+                          </div>
+                        </div>
+                        <div class="faq-content-wrap">
+                          <div class="faq-top-gap">
+                            <p class="faq-answer-text">{item.answer}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+                <div class="faq-tabs-content w-tab-content">
+                  {items.map((_, i) => (
+                    <div data-w-tab={`Tab ${i + 1}`} class:list={['faq-tab-pane w-tab-pane', i === 0 && 'w--tab-active']}></div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

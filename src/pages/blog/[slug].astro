@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/global/Header.astro';
+import Footer from '../../components/global/Footer.astro';
+import BlogDetails from '../../components/sections/blog-detail/BlogDetails.astro';
+import BlogSliderSection from '../../components/sections/BlogSliderSection.astro';
+import FaqSection from '../../components/sections/FaqSection.astro';
+import { getBlogs, type Blog } from '../../lib/cms';
+
+export async function getStaticPaths() {
+  const posts = await getBlogs();
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    // "Similar Insight": the first three other posts.
+    props: { post, related: posts.filter((p) => p.slug !== post.slug).slice(0, 3) },
+  }));
+}
+
+interface Props {
+  post: Blog;
+  related: Blog[];
+}
+const { post, related } = Astro.props;
+const wfPage = '6abe84b3182afe641eb8e34c';
+---
+<BaseLayout title={post.title} description={post.seoDescription ?? `${post.readTime} read`} image={post.bannerImage?.url} type="article" wfPage={wfPage}>
+  <div class="page-wrapper">
+    <Header />
+    <div class="main-wrapper">
+      <BlogDetails post={post} />
+      <BlogSliderSection title="Similar Insight" posts={related} />
+      <FaqSection />
+    </div>
+    <Footer wfPage={wfPage} />
+  </div>
+</BaseLayout>

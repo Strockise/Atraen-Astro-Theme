@@ -1,0 +1,17 @@
+---
+/**
+ * Data block read by the Webflow lightbox (`a.w-lightbox` > script.w-json). Opens the video set in
+ * src/config/config.json → video:
+ *   - an .mp4/.webm URL (default: the bundled /videos clip) → native <video> player
+ *   - any other URL → treated as an embed URL in an <iframe> (e.g. a YouTube/Vimeo "embed" URL)
+ */
+import config from '../../config/config.json';
+
+const { url, poster, title, width, height } = config.video;
+const isFile = /\.(mp4|webm|ogg)(\?|$)/i.test(url);
+const html = isFile
+  ? `<video src="${url}" poster="${poster}" width="${width}" height="${height}" controls autoplay playsinline style="width:100%;height:100%;background:#000"></video>`
+  : `<iframe src="${url}" width="${width}" height="${height}" title="${title}" frameborder="0" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+const json = JSON.stringify({ items: [{ url, originalUrl: url, width, height, thumbnailUrl: poster, html, type: 'video' }], group: '' });
+---
+<script is:inline type="application/json" class="w-json" set:html={json}></script>
