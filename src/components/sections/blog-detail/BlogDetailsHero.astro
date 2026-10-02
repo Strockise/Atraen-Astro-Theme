@@ -1,0 +1,35 @@
+---
+import SectionTitle from '../../ui/SectionTitle.astro';
+import type { Blog } from '../../../lib/types';
+
+interface Props {
+  item: Blog;
+}
+const { item } = Astro.props;
+---
+<section class="section-blog-details-hero">
+  <div class="w-layout-blockcontainer container-main w-container">
+    <div class="blog-details-hero-wrapper">
+      <div class="blog-detials-hero-header-block">
+        <div page-load-0="" class="section-title-block">
+          <SectionTitle text="BLOG DETAILS" variant="light" />
+        </div>
+        <div class="section-header-block">
+          <h1 heading-title class="heading-style-1 text-color-white">{item.title}</h1>
+        </div>
+      </div>
+      <div class="counter-single-card-block">
+        <div page-load-1="" class="counter-single-card is-border-left">
+          <h2 class="counter-number text-color-white">120+</h2>
+          <p class="body-text-md text-color-white">Published Articles</p>
+        </div>
+        <div page-load-2="" class="counter-single-card">
+          <h2 class="counter-number text-color-white">50K+</h2>
+          <p class="body-text-md text-color-white">Monthly Readers</p>
+        </div>
+      </div>
+    </div>
+    <div class="blog-details-hero-image-block"><img src="/images/Team-Image.webp" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/3f531b44160cf7df933b864a77a2eded_Team-Image-p-500.webp 500w, /images/3f531b44160cf7df933b864a77a2eded_Team-Image-p-800.webp 800w, /images/3f531b44160cf7df933b864a77a2eded_Team-Image-p-1080.webp 1080w, /images/3f531b44160cf7df933b864a77a2eded_Team-Image-p-1600.webp 1600w, /images/Team-Image.webp 1920w" alt="blog-details-hero-image" class="blog-details-hero-image"></div>
+    <div class="hero-overlay"></div>
+  </div>
+</section>

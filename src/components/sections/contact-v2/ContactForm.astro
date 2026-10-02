@@ -1,0 +1,70 @@
+---
+import { site } from '../../../config/site';
+---
+<section class="section_contact-form">
+  <div class="section-gap">
+    <div class="w-layout-blockcontainer container-main w-container">
+      <div class="contact-form-wrapper-v2">
+        <div class="contact-form-top">
+          <div class="contact-form-header-block">
+            <div class="section-header-block">
+              <h2 title-scroll="" class="heading-style-2">Get Support, Stay Connected.</h2>
+            </div>
+            <div page-scroll-1="" class="section-summary-block max-width-37">
+              <p class="body-text-md text-color-gray">Have questions or need assistance? Our team is here to help! Reach out to us for support, inquiries, or collaboration opportunities.</p>
+            </div>
+          </div>
+          <div class="contact-info-block">
+            <div page-scroll-2="" class="contact-info-wrap">
+              <div class="contact-info-icon-block">
+                <div class="contact-info-icon w-embed"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M27.1134 25.1453L26.2034 26.0513C26.2034 26.0513 24.0375 28.2033 18.1275 22.3274C12.2176 16.4514 14.3836 14.2995 14.3836 14.2995L14.9556 13.7275C16.3696 12.3235 16.5035 10.0675 15.2696 8.41952L12.7496 5.05356C11.2216 3.01358 8.27164 2.74358 6.52166 4.48356L3.3817 7.60353C2.51571 8.46752 1.93571 9.58351 2.00571 10.8235C2.18571 13.9975 3.62169 20.8234 11.6296 28.7873C20.1235 37.2312 28.0934 37.5672 31.3514 37.2632C32.3834 37.1672 33.2794 36.6432 34.0014 35.9232L36.8413 33.0992C38.7613 31.1933 38.2213 27.9233 35.7653 26.5893L31.9454 24.5113C30.3334 23.6374 28.3734 23.8934 27.1134 25.1453Z" fill="currentColor"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="get-in-touch-info">
+                <h3 class="body-text-large text-color-white">Phone Number</h3>
+                <a href={site.phoneHref} class="get-in-touch-contact text-color-white">{site.phone}</a>
+              </div>
+            </div>
+            <div page-scroll-3="" class="contact-info-wrap is-bg-color-primary">
+              <div class="contact-info-icon-block">
+                <div class="contact-info-icon w-embed"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.66667 3.33337C4.89856 3.33337 3.20286 4.03575 1.95262 5.286C0.702379 6.53624 0 8.23193 0 10V10.67L20 21.44L40 10.6734V10C40 8.23193 39.2976 6.53624 38.0474 5.286C36.7971 4.03575 35.1014 3.33337 33.3333 3.33337H6.66667ZM40 14.4567L20.79 24.8C20.5472 24.9307 20.2758 24.9992 20 24.9992C19.7242 24.9992 19.4528 24.9307 19.21 24.8L0 14.4567V30C0 31.7682 0.702379 33.4638 1.95262 34.7141C3.20286 35.9643 4.89856 36.6667 6.66667 36.6667H33.3333C35.1014 36.6667 36.7971 35.9643 38.0474 34.7141C39.2976 33.4638 40 31.7682 40 30V14.4567Z" fill="currentColor"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="get-in-touch-info">
+                <h3 class="body-text-large text-color-white">Email address</h3>
+                <a href={`mailto:${site.email}`} class="get-in-touch-contact text-color-white">{site.email}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-content">
+          <div class="contact-form-wrapper">
+            <div page-scroll-0="" class="contact-form-block w-form">
+              <form name="email-form" method="post" class="contact-form-wrap" data-endpoint={site.formEndpoint} aria-label="Contact form"><div class="cx-visually-hidden" aria-hidden="true"><label>Leave this field empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+                <div class="contact-wrapper">
+                  <div class="contact-form"><label for="email-form-name" class="contact-form-text-label">Full Name</label><input class="contact-form-text-field w-input" maxlength="256" name="name" placeholder="Enter your name..." type="text" required id="email-form-name" autocomplete="name"></div>
+                  <div class="contact-form"><label for="email-form-email" class="contact-form-text-label">Email Address</label><input class="contact-form-text-field w-input" maxlength="256" name="email" placeholder="Enter your email..." type="email" required id="email-form-email" autocomplete="email"></div>
+                </div>
+                <div class="contact-wrapper">
+                  <div class="contact-form"><label for="email-form-phone" class="contact-form-text-label">Phone Number</label><input class="contact-form-text-field w-input" maxlength="256" name="phone" placeholder="Enter your number..." type="tel" required id="email-form-phone" autocomplete="tel"></div>
+                  <div class="contact-form"><label for="email-form-subject" class="contact-form-text-label">Subject</label><input class="contact-form-text-field w-input" maxlength="256" name="subject" placeholder="Enter your subject..." type="text" id="email-form-subject" required></div>
+                </div>
+                <div class="contact-form"><label for="email-form-message" class="contact-form-text-label">Message</label><textarea id="email-form-message" name="message" maxlength="5000" placeholder="Write your message..." class="contact-form-text-field is-text w-input"></textarea></div><input type="submit" data-wait="Please wait..." class="contact-form-button w-button" value="Submit Now">
+              </form>
+              <div class="w-form-done" role="status">
+                <div>Thank you! Your submission has been received!</div>
+              </div>
+              <div class="w-form-fail" role="alert">
+                <div>Oops! Something went wrong while submitting the form.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

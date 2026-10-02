@@ -1,0 +1,39 @@
+---
+import SectionTitle from '../../ui/SectionTitle.astro';
+import ServiceMarqueeCard from '../../cards/ServiceMarqueeCard.astro';
+import { getServices } from '../../../lib/cms';
+
+const services = await getServices();
+---
+<section class="section-service">
+  <div class="section-service-bg-color">
+    <div class="w-layout-blockcontainer container-full w-container">
+      <div class="service-wrapper">
+        <div class="service-header-blcok">
+          <div page-scroll-0="" class="section-title-block">
+            <SectionTitle text="MORE SERVICES" />
+          </div>
+          <div class="section-header-block">
+            <h2 title-scroll="" class="heading-style-2">Consulting Services Designed to Accelerate Business Growth</h2>
+          </div>
+        </div>
+        <div page-scroll-2="" class="service-content-wrapper-v2">
+          <div class="service-content-block">
+            <div class="service-collection-list-wrapper w-dyn-list">
+              <div role="list" class="service-collection-list w-dyn-items">{services.map((entry) => (<div role="listitem" class="service-collection-item w-dyn-item"><ServiceMarqueeCard item={entry} /></div>))}</div>
+              {services.length === 0 && (<div class="w-dyn-empty">
+  <div>No items found.</div>
+</div>)}
+            </div>
+            <div class="service-collection-list-wrapper w-dyn-list">
+              <div role="list" class="service-collection-list w-dyn-items">{services.map((entry) => (<div role="listitem" class="service-collection-item w-dyn-item"><ServiceMarqueeCard item={entry} /></div>))}</div>
+              {services.length === 0 && (<div class="w-dyn-empty">
+  <div>No items found.</div>
+</div>)}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

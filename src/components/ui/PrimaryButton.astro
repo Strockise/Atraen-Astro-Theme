@@ -1,0 +1,47 @@
+---
+/**
+ * Webflow "Primary Button" component. Hover animation (split-char text roll + icon swap)
+ * is driven by src/scripts/interactions.ts.
+ *
+ * variant: 'dark' (Webflow variant-1, base), 'light' (variant-2), 'accent' (variant-3)
+ */
+interface Props {
+  href: string;
+  text: string;
+  variant?: 'dark' | 'light' | 'accent';
+  target?: '_blank';
+  class?: string;
+}
+const { href, text, variant = 'dark', target, class: className } = Astro.props;
+
+const variantClass = {
+  dark: undefined,
+  light: 'w-variant-c05778f2-d810-fb9a-83e4-ce13c637d0b6',
+  accent: 'w-variant-8ea51a26-ea24-0a44-deaa-2f63bc1d30be',
+}[variant];
+
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isCurrent = (href.replace(/\/$/, '') || '/') === path;
+---
+<a
+  href={href}
+  target={target}
+  rel={target === '_blank' ? 'noopener noreferrer' : undefined}
+  aria-current={isCurrent ? 'page' : undefined}
+  class:list={['primary-button', variantClass, 'w-inline-block', isCurrent && 'w--current', className]}
+>
+  <div class="primary-button-text-block">
+    <div class="button-text is-01">{text}</div>
+    <div class="button-text is-02">{text}</div>
+  </div>
+  <div class="button-icon-block">
+    <div class="button-icon is-01 w-embed"><svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M10.4162 3.62847L7.05964 0.271938C6.90945 0.121751 6.66595 0.121751 6.51576 0.271938C6.36559 0.422114 6.36557 0.665593 6.51573 0.815785L9.79463 4.09539L0.384616 4.09539C0.172199 4.09539 0 4.26759 0 4.48001C0 4.69242 0.172198 4.86462 0.384616 4.86462L9.79617 4.86462L6.51584 8.14424C6.36563 8.29442 6.36562 8.53793 6.51581 8.68812C6.66597 8.83829 6.90944 8.8383 7.05962 8.68815L10.4162 5.33231C10.6439 5.10462 10.7692 4.80154 10.7692 4.48001C10.7692 4.15847 10.6439 3.85539 10.4162 3.62924V3.62847Z" fill="currentColor"></path>
+      </svg>
+    </div>
+    <div class="button-icon is-02 w-embed"><svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M10.4162 3.62847L7.05964 0.271938C6.90945 0.121751 6.66595 0.121751 6.51576 0.271938C6.36559 0.422114 6.36557 0.665593 6.51573 0.815785L9.79463 4.09539L0.384616 4.09539C0.172199 4.09539 0 4.26759 0 4.48001C0 4.69242 0.172198 4.86462 0.384616 4.86462L9.79617 4.86462L6.51584 8.14424C6.36563 8.29442 6.36562 8.53793 6.51581 8.68812C6.66597 8.83829 6.90944 8.8383 7.05962 8.68815L10.4162 5.33231C10.6439 5.10462 10.7692 4.80154 10.7692 4.48001C10.7692 4.15847 10.6439 3.85539 10.4162 3.62924V3.62847Z" fill="currentColor"></path>
+      </svg>
+    </div>
+  </div>
+</a>

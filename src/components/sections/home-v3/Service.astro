@@ -1,0 +1,65 @@
+---
+import ServiceStackCard from '../../cards/ServiceStackCard.astro';
+import { getServices, take } from '../../../lib/cms';
+
+const services = await getServices();
+---
+<section class="section-service">
+  <div class="section-gap">
+    <div class="w-layout-blockcontainer container-main w-container">
+      <div class="service-sticky-container">
+        <div class="service-sticky-block">
+          <div class="service-wrapper-v3">
+            <div class="service-image-wrapper">
+              <div class="service-image-block">
+                <div class="service-image-wrap is-01"><img src="/images/Service-Image-1.webp" loading="lazy" sizes="(max-width: 630px) 100vw, 630px" srcset="/images/Service-Image-1-p-500.webp 500w, /images/Service-Image-1.webp 630w" alt="service-image" class="service-image width-full is-mobile"></div>
+                <div class="service-image-wrap is-02"><img src="/images/Service-Image-5.webp" loading="lazy" sizes="100vw" srcset="/images/Service-Image-5-p-500.webp 500w, /images/Service-Image-5.webp 630w" alt="service-image" class="service-image width-full is-mobile"></div>
+                <div class="service-image-wrap is-03"><img src="/images/Service-Image-2.webp" loading="lazy" sizes="100vw" srcset="/images/Service-Image-2-p-500.webp 500w, /images/Service-Image-2.webp 630w" alt="service-image" class="service-image width-full is-mobile"></div>
+                <div class="service-image-wrap is-04"><img src="/images/Service-Image-3.webp" loading="lazy" sizes="100vw" srcset="/images/Service-Image-3-p-500.webp 500w, /images/Service-Image-3.webp 630w" alt="service-image" class="service-image width-full is-mobile"></div>
+                <div class="service-image-wrap is-05"><img src="/images/Service-Image-4.webp" loading="lazy" sizes="100vw" srcset="/images/Service-Image-4-p-500.webp 500w, /images/Service-Image-4.webp 630w" alt="service-image" class="service-image width-full is-mobile"></div>
+                <div class="service-image-wrap is-06"><img src="/images/Service-Image-4.webp" loading="lazy" sizes="100vw" srcset="/images/Service-Image-4-p-500.webp 500w, /images/Service-Image-4.webp 630w" alt="service-image" class="service-image width-full is-mobile"></div>
+              </div>
+            </div>
+            <div class="service-line-block">
+              <div class="service-line-v3"></div>
+            </div>
+            <div class="service-content-wrapper-v3">
+              <div class="service-content-wrap-v3">
+                <div class="service-cms-list-wrapper w-dyn-list">
+                  <div role="list" class="service-cms-list-v3 w-dyn-items">{take(services, 1).map((entry) => (<div role="listitem" class="service-cms-item w-dyn-item"><ServiceStackCard item={entry} class="is-01" /></div>))}</div>
+                  {take(services, 1).length === 0 && (<div class="w-dyn-empty">
+  <div>No items found.</div>
+</div>)}
+                </div>
+                <div class="service-cms-list-wrapper w-dyn-list">
+                  <div role="list" class="service-cms-list-v3 w-dyn-items">{take(services, 1, 1).map((entry) => (<div role="listitem" class="service-cms-item w-dyn-item"><ServiceStackCard item={entry} class="is-02" /></div>))}</div>
+                  {take(services, 1, 1).length === 0 && (<div class="w-dyn-empty">
+  <div>No items found.</div>
+</div>)}
+                </div>
+                <div class="service-cms-list-wrapper w-dyn-list">
+                  <div role="list" class="service-cms-list-v3 w-dyn-items">{take(services, 1, 2).map((entry) => (<div role="listitem" class="service-cms-item w-dyn-item"><ServiceStackCard item={entry} class="is-03" /></div>))}</div>
+                  {take(services, 1, 2).length === 0 && (<div class="w-dyn-empty">
+  <div>No items found.</div>
+</div>)}
+                </div>
+                <div class="service-cms-list-wrapper w-dyn-list">
+                  <div role="list" class="service-cms-list-v3 w-dyn-items">{take(services, 1, 3).map((entry) => (<div role="listitem" class="service-cms-item w-dyn-item"><ServiceStackCard item={entry} class="is-04" /></div>))}</div>
+                  {take(services, 1, 3).length === 0 && (<div class="w-dyn-empty">
+  <div>No items found.</div>
+</div>)}
+                </div>
+                <div class="service-cms-list-wrapper w-dyn-list">
+                  <div role="list" class="service-cms-list-v3 w-dyn-items">{take(services, 1, 4).map((entry) => (<div role="listitem" class="service-cms-item w-dyn-item"><ServiceStackCard item={entry} class="is-05" /></div>))}</div>
+                  {take(services, 1, 4).length === 0 && (<div class="w-dyn-empty">
+  <div>No items found.</div>
+</div>)}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

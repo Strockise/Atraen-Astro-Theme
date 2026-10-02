@@ -1,0 +1,29 @@
+---
+import type { Service } from '../../lib/types';
+import PrimaryButton from '../ui/PrimaryButton.astro';
+
+interface Props {
+  item: Service;
+}
+const { item } = Astro.props;
+const itemUrl = `/services/${item.slug}`;
+---
+<div class="service-content-block-two">
+  <div class="service-content-wrap-two">
+    <div class="service-content-block-v3">
+      <h2 class="service-number">{item.number}</h2>
+      <div class="service-content-wrap">
+        <a aria-label="service-title-link" href={itemUrl} class="service-title-link w-inline-block">
+          <h3 class="service-title">{item.title}</h3>
+        </a>
+        <p class="body-text-md text-color-gray">{item.summary}</p>
+      </div>
+      <div class="service-button-block is-gap-none">
+        <PrimaryButton href={itemUrl} text="View Services" variant="light" />
+      </div>
+    </div>
+  </div>
+  <div class="service-image-block-two">
+    <a href={itemUrl} class="service-image-link w-inline-block"><img src={item.mainImage?.url} loading="lazy" alt={item.mainImage?.alt ?? "service-image"} class="service-image width-full" srcset={item.mainImage?.srcset} sizes="(max-width: 767px) 100vw, (max-width: 991px) 727px, 939px"></a>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+---
+import '../styles/normalize.css';
+import '../styles/webflow.css';
+import '../styles/clavix.webflow.css';
+import 'lenis/dist/lenis.css';
+import '../styles/custom.css';
+import SEO from '../components/global/SEO.astro';
+import Header from '../components/global/Header.astro';
+import Footer from '../components/global/Footer.astro';
+import { site } from '../config/site';
+
+interface Props {
+  /** Full page title (Webflow page title). Defaults to "<name> - <suffix>". */
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+  /** Header variant ('alt' is used by the style guide). */
+  headerVariant?: 'default' | 'alt';
+  /** 'page' wraps content in .page_wrapper/.main_wrapper; 'utility' renders nav/content/footer directly in body (404). */
+  shell?: 'page' | 'utility';
+  /** Page key for page-specific interactions (e.g. 'home', 'home-v3', 'about-v1', 'services'). */
+  page?: string;
+}
+const {
+  title = `${site.name} - ${site.titleSuffix}`,
+  description,
+  image,
+  type,
+  noindex,
+  headerVariant = 'default',
+  shell = 'page',
+  page,
+} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <SEO title={title} description={description} image={image} type={type} noindex={noindex} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+    <link rel="preload" href="/fonts/open-sauce-one-latin-400-normal.woff" as="font" type="font/woff" crossorigin="anonymous" />
+    <script is:inline>
+      !function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);
+      // Safety net: never leave animated content hidden if scripts fail to load.
+      setTimeout(function(){document.documentElement.classList.add("w-mod-ix3")},4000);
+    </script>
+  </head>
+  <body data-page={page}>
+    {shell === 'page' ? (
+      <div class="page_wrapper">
+        <Header variant={headerVariant} />
+        <div class="main_wrapper">
+          <slot />
+        </div>
+        <Footer />
+      </div>
+    ) : (
+      <>
+        <Header variant={headerVariant} />
+        <slot />
+        <Footer />
+      </>
+    )}
+    <script>
+      import '../scripts/main.ts';
+    </script>
+  </body>
+</html>

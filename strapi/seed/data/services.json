@@ -1,0 +1,182 @@
+[
+  {
+    "order": 1,
+    "title": "Business Strategy Consulting",
+    "slug": "business-strategy-consulting",
+    "number": "// 01",
+    "summary": "Develop clear, actionable strategies that align with your vision, strengthen market positioning, and drive long-term business growth.",
+    "mainImage": {
+      "url": "/cms/Service-Main-Image-1.webp",
+      "alt": "service-image"
+    },
+    "thumbnailImage": {
+      "url": "/cms/Service-Thumbnail-Image-1.webp",
+      "alt": "service-image"
+    },
+    "duration": "8 Months",
+    "industry": "Technology & SaaS",
+    "client": "Nexora Solutions",
+    "detailsOne": "## Building Strong Foundations for Sustainable Growth\n\nA successful business requires more than short-term planning—it needs a clear vision and a well-defined strategy. Our consulting approach focuses on understanding your business objectives, evaluating market opportunities, and creating customized strategic roadmaps that support long-term growth.\n\nWe help organizations improve decision-making, strengthen competitive positioning, and develop scalable strategies that deliver measurable results.",
+    "detailsTwo": "### What We Deliver\n\n-   Strategic Business Planning\n-   Market & Competitive Analysis\n-   Risk Assessment & Mitigation\n-   Organizational Alignment\n-   Long-Term Growth Roadmaps",
+    "detailsThree": "## A Proven Process for Strategic Business Success\n\nOur approach combines in-depth analysis, strategic planning, and practical execution to help businesses achieve their goals. We work closely with clients at every stage, ensuring that every recommendation is aligned with their vision, challenges, and long-term growth objectives.",
+    "detailsFour": "## Driving Long-Term Growth Through Strategic Excellence\n\nA well-defined strategy is the foundation of sustainable business success. Through our Business Strategy Consulting services, we help organizations align their goals, optimize performance, and unlock new growth opportunities. With expert guidance and actionable insights, we empower businesses to achieve lasting results in an evolving marketplace.",
+    "gallery": [
+      {
+        "url": "/cms/Service-Image-1.webp",
+        "alt": "service-multi-image"
+      },
+      {
+        "url": "/cms/Service-Image-2.webp",
+        "alt": "service-multi-image"
+      }
+    ],
+    "overviewOne": "#### Discovery & Analysis\n\nWe assess your business, market position, challenges, and growth opportunities.",
+    "overviewTwo": "#### Strategy Development\n\nOur experts create a tailored strategy aligned with your goals and objectives.",
+    "overviewThree": "#### Implementation Planning\n\nWe develop actionable roadmaps with clear priorities and measurable outcomes.",
+    "overviewFour": "#### Performance Optimization\n\nWe monitor progress, refine strategies, and support continuous improvement."
+  },
+  {
+    "order": 2,
+    "title": "Financial Advisory",
+    "slug": "financial-advisory",
+    "number": "// 02",
+    "summary": "Optimize financial performance through budgeting, forecasting, risk assessment, and data-driven decision-making.",
+    "mainImage": {
+      "url": "/cms/Service-Main-Image-2.webp",
+      "alt": "service-image"
+    },
+    "thumbnailImage": {
+      "url": "/cms/Service-Thumbnail-Image-2.webp",
+      "alt": "service-image"
+    },
+    "duration": "8 Months",
+    "industry": "Technology & SaaS",
+    "client": "Nexora Solutions",
+    "detailsOne": "## Building Strong Foundations for Sustainable Growth\n\nA successful business requires more than short-term planning—it needs a clear vision and a well-defined strategy. Our consulting approach focuses on understanding your business objectives, evaluating market opportunities, and creating customized strategic roadmaps that support long-term growth.\n\nWe help organizations improve decision-making, strengthen competitive positioning, and develop scalable strategies that deliver measurable results.",
+    "detailsTwo": "### What We Deliver\n\n-   Strategic Business Planning\n-   Market & Competitive Analysis\n-   Risk Assessment & Mitigation\n-   Organizational Alignment\n-   Long-Term Growth Roadmaps",
+    "detailsThree": "## A Proven Process for Strategic Business Success\n\nOur approach combines in-depth analysis, strategic planning, and practical execution to help businesses achieve their goals. We work closely with clients at every stage, ensuring that every recommendation is aligned with their vision, challenges, and long-term growth objectives.",
+    "detailsFour": "## Driving Long-Term Growth Through Strategic Excellence\n\nA well-defined strategy is the foundation of sustainable business success. Through our Business Strategy Consulting services, we help organizations align their goals, optimize performance, and unlock new growth opportunities. With expert guidance and actionable insights, we empower businesses to achieve lasting results in an evolving marketplace.",
+    "gallery": [
+      {
+        "url": "/cms/Service-Image-1.webp",
+        "alt": "service-multi-image"
+      },
+      {
+        "url": "/cms/Service-Image-2.webp",
+        "alt": "service-multi-image"
+      }
+    ],
+    "overviewOne": "#### Discovery & Analysis\n\nWe assess your business, market position, challenges, and growth opportunities.",
+    "overviewTwo": "#### Strategy Development\n\nOur experts create a tailored strategy aligned with your goals and objectives.",
+    "overviewThree": "#### Implementation Planning\n\nWe develop actionable roadmaps with clear priorities and measurable outcomes.",
+    "overviewFour": "#### Performance Optimization\n\nWe monitor progress, refine strategies, and support continuous improvement."
+  },
+  {
+    "order": 3,
+    "title": "Market Research & Analysis",
+    "slug": "market-research-analysis",
+    "number": "// 03",
+    "summary": "Gain valuable insights into market trends, customer behavior, and competitive landscapes to make informed business decisions.",
+    "mainImage": {
+      "url": "/cms/Service-Main-Image-3.webp",
+      "alt": "service-image"
+    },
+    "thumbnailImage": {
+      "url": "/cms/Service-Thumbnail-Image-3.webp",
+      "alt": "service-image"
+    },
+    "duration": "8 Months",
+    "industry": "Technology & SaaS",
+    "client": "Nexora Solutions",
+    "detailsOne": "## Building Strong Foundations for Sustainable Growth\n\nA successful business requires more than short-term planning—it needs a clear vision and a well-defined strategy. Our consulting approach focuses on understanding your business objectives, evaluating market opportunities, and creating customized strategic roadmaps that support long-term growth.\n\nWe help organizations improve decision-making, strengthen competitive positioning, and develop scalable strategies that deliver measurable results.",
+    "detailsTwo": "### What We Deliver\n\n-   Strategic Business Planning\n-   Market & Competitive Analysis\n-   Risk Assessment & Mitigation\n-   Organizational Alignment\n-   Long-Term Growth Roadmaps",
+    "detailsThree": "## A Proven Process for Strategic Business Success\n\nOur approach combines in-depth analysis, strategic planning, and practical execution to help businesses achieve their goals. We work closely with clients at every stage, ensuring that every recommendation is aligned with their vision, challenges, and long-term growth objectives.",
+    "detailsFour": "## Driving Long-Term Growth Through Strategic Excellence\n\nA well-defined strategy is the foundation of sustainable business success. Through our Business Strategy Consulting services, we help organizations align their goals, optimize performance, and unlock new growth opportunities. With expert guidance and actionable insights, we empower businesses to achieve lasting results in an evolving marketplace.",
+    "gallery": [
+      {
+        "url": "/cms/Service-Image-1.webp",
+        "alt": "service-multi-image"
+      },
+      {
+        "url": "/cms/Service-Image-2.webp",
+        "alt": "service-multi-image"
+      }
+    ],
+    "overviewOne": "#### Discovery & Analysis\n\nWe assess your business, market position, challenges, and growth opportunities.",
+    "overviewTwo": "#### Strategy Development\n\nOur experts create a tailored strategy aligned with your goals and objectives.",
+    "overviewThree": "#### Implementation Planning\n\nWe develop actionable roadmaps with clear priorities and measurable outcomes.",
+    "overviewFour": "#### Performance Optimization\n\nWe monitor progress, refine strategies, and support continuous improvement."
+  },
+  {
+    "order": 4,
+    "title": "Operations Consulting",
+    "slug": "operations-consulting",
+    "number": "// 04",
+    "summary": "Improve efficiency, streamline workflows, and enhance operational performance to maximize productivity and profitability.",
+    "mainImage": {
+      "url": "/cms/Service-Main-Image-4.webp",
+      "alt": "service-image"
+    },
+    "thumbnailImage": {
+      "url": "/cms/Service-Thumbnail-Image-4.webp",
+      "alt": "service-image"
+    },
+    "duration": "8 Months",
+    "industry": "Technology & SaaS",
+    "client": "Nexora Solutions",
+    "detailsOne": "## Building Strong Foundations for Sustainable Growth\n\nA successful business requires more than short-term planning—it needs a clear vision and a well-defined strategy. Our consulting approach focuses on understanding your business objectives, evaluating market opportunities, and creating customized strategic roadmaps that support long-term growth.\n\nWe help organizations improve decision-making, strengthen competitive positioning, and develop scalable strategies that deliver measurable results.",
+    "detailsTwo": "### What We Deliver\n\n-   Strategic Business Planning\n-   Market & Competitive Analysis\n-   Risk Assessment & Mitigation\n-   Organizational Alignment\n-   Long-Term Growth Roadmaps",
+    "detailsThree": "## A Proven Process for Strategic Business Success\n\nOur approach combines in-depth analysis, strategic planning, and practical execution to help businesses achieve their goals. We work closely with clients at every stage, ensuring that every recommendation is aligned with their vision, challenges, and long-term growth objectives.",
+    "detailsFour": "## Driving Long-Term Growth Through Strategic Excellence\n\nA well-defined strategy is the foundation of sustainable business success. Through our Business Strategy Consulting services, we help organizations align their goals, optimize performance, and unlock new growth opportunities. With expert guidance and actionable insights, we empower businesses to achieve lasting results in an evolving marketplace.",
+    "gallery": [
+      {
+        "url": "/cms/Service-Image-1.webp",
+        "alt": "service-multi-image"
+      },
+      {
+        "url": "/cms/Service-Image-2.webp",
+        "alt": "service-multi-image"
+      }
+    ],
+    "overviewOne": "#### Discovery & Analysis\n\nWe assess your business, market position, challenges, and growth opportunities.",
+    "overviewTwo": "#### Strategy Development\n\nOur experts create a tailored strategy aligned with your goals and objectives.",
+    "overviewThree": "#### Implementation Planning\n\nWe develop actionable roadmaps with clear priorities and measurable outcomes.",
+    "overviewFour": "#### Performance Optimization\n\nWe monitor progress, refine strategies, and support continuous improvement."
+  },
+  {
+    "order": 5,
+    "title": "Growth & Expansion Planning",
+    "slug": "growth-expansion-planning",
+    "number": "// 05",
+    "summary": "Identify new opportunities, develop expansion strategies, and create sustainable growth plans for long-term success.",
+    "mainImage": {
+      "url": "/cms/Service-Main-Image-5.webp",
+      "alt": "service-image"
+    },
+    "thumbnailImage": {
+      "url": "/cms/Service-Thumbnail-Image-5.webp",
+      "alt": "service-image"
+    },
+    "duration": "8 Months",
+    "industry": "Technology & SaaS",
+    "client": "Nexora Solutions",
+    "detailsOne": "## Building Strong Foundations for Sustainable Growth\n\nA successful business requires more than short-term planning—it needs a clear vision and a well-defined strategy. Our consulting approach focuses on understanding your business objectives, evaluating market opportunities, and creating customized strategic roadmaps that support long-term growth.\n\nWe help organizations improve decision-making, strengthen competitive positioning, and develop scalable strategies that deliver measurable results.",
+    "detailsTwo": "### What We Deliver\n\n-   Strategic Business Planning\n-   Market & Competitive Analysis\n-   Risk Assessment & Mitigation\n-   Organizational Alignment\n-   Long-Term Growth Roadmaps",
+    "detailsThree": "## A Proven Process for Strategic Business Success\n\nOur approach combines in-depth analysis, strategic planning, and practical execution to help businesses achieve their goals. We work closely with clients at every stage, ensuring that every recommendation is aligned with their vision, challenges, and long-term growth objectives.",
+    "detailsFour": "## Driving Long-Term Growth Through Strategic Excellence\n\nA well-defined strategy is the foundation of sustainable business success. Through our Business Strategy Consulting services, we help organizations align their goals, optimize performance, and unlock new growth opportunities. With expert guidance and actionable insights, we empower businesses to achieve lasting results in an evolving marketplace.",
+    "gallery": [
+      {
+        "url": "/cms/Service-Image-1.webp",
+        "alt": "service-multi-image"
+      },
+      {
+        "url": "/cms/Service-Image-2.webp",
+        "alt": "service-multi-image"
+      }
+    ],
+    "overviewOne": "#### Discovery & Analysis\n\nWe assess your business, market position, challenges, and growth opportunities.",
+    "overviewTwo": "#### Strategy Development\n\nOur experts create a tailored strategy aligned with your goals and objectives.",
+    "overviewThree": "#### Implementation Planning\n\nWe develop actionable roadmaps with clear priorities and measurable outcomes.",
+    "overviewFour": "#### Performance Optimization\n\nWe monitor progress, refine strategies, and support continuous improvement."
+  }
+]

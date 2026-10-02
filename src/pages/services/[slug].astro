@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServicesHero from '../../components/sections/service-detail/ServicesHero.astro';
+import ServiceBio from '../../components/sections/service-detail/ServiceBio.astro';
+import ServiceDetails from '../../components/sections/service-detail/ServiceDetails.astro';
+import Service from '../../components/sections/shared/Service.astro';
+import { getServices } from '../../lib/cms';
+
+export async function getStaticPaths() {
+  const items = await getServices();
+  return items.map((item) => ({ params: { slug: item.slug }, props: { item } }));
+}
+
+const { item } = Astro.props;
+---
+<BaseLayout title={item.title} description={item.summary} page="service-detail">
+  <ServicesHero />
+  <ServiceBio item={item} />
+  <ServiceDetails item={item} />
+  <Service />
+</BaseLayout>

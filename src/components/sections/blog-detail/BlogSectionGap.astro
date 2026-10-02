@@ -1,0 +1,81 @@
+---
+import PrimaryButton from '../../ui/PrimaryButton.astro';
+import SectionTitle from '../../ui/SectionTitle.astro';
+import BlogCard from '../../cards/BlogCard.astro';
+import BlogCardSlide from '../../cards/BlogCardSlide.astro';
+import { getBlogs, take } from '../../../lib/cms';
+
+const blogs = await getBlogs();
+---
+<section class="blog-section-gap w-variant-241ca7ee-eb3d-0f5b-c3ba-4c0024a7eaab">
+  <div class="section-gap">
+    <div class="w-layout-blockcontainer container-main w-container">
+      <div class="blog-wrapper">
+        <div class="blog-top-block">
+          <div class="blog-header-block">
+            <div page-scroll-0="" class="blog-title-block">
+              <SectionTitle text="OUR JOURNAL" />
+            </div>
+            <div class="section-header-block">
+              <h2 title-scroll="" class="heading-style-2">Insights, Strategies and Business Growth Ideas</h2>
+            </div>
+          </div>
+          <div page-scroll-2="" class="blog-button-wrap">
+            <PrimaryButton href="/blog" text="View all Blogs" variant="light" />
+          </div>
+        </div>
+        <div class="blog-content-wrapper desktop">
+          <div class="blog-collection-list-wrapper w-dyn-list">
+            <div role="list" class="blog-collection-list w-dyn-items">{take(blogs, 3).map((entry) => (<div page-scroll-3="" role="listitem" class="blog-collection-item w-dyn-item"><BlogCard item={entry} /></div>))}</div>
+            {take(blogs, 3).length === 0 && (<div class="w-dyn-empty">
+  <div>No items found.</div>
+</div>)}
+          </div>
+        </div>
+        <div class="blog-content-wrapper mobile">
+          <div data-delay="4000" data-animation="slide" class="slider-block w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
+            <div class="slider-mask w-slider-mask">
+              <div class="slider w-slide">
+                <div class="blog-collection-list-wrapper w-dyn-list">
+                  <div role="list" class="blog-collection-list w-dyn-items">{take(blogs, 1).map((entry) => (<div role="listitem" class="blog-collection-item w-dyn-item"><BlogCardSlide item={entry} /></div>))}</div>
+                  {take(blogs, 1).length === 0 && (<div class="w-dyn-empty">
+  <div>No items found.</div>
+</div>)}
+                </div>
+              </div>
+              <div class="slider w-slide">
+                <div class="blog-collection-list-wrapper w-dyn-list">
+                  <div role="list" class="blog-collection-list w-dyn-items">{take(blogs, 1, 1).map((entry) => (<div role="listitem" class="blog-collection-item w-dyn-item"><BlogCardSlide item={entry} /></div>))}</div>
+                  {take(blogs, 1, 1).length === 0 && (<div class="w-dyn-empty">
+  <div>No items found.</div>
+</div>)}
+                </div>
+              </div>
+              <div class="slider w-slide">
+                <div class="blog-collection-list-wrapper w-dyn-list">
+                  <div role="list" class="blog-collection-list w-dyn-items">{take(blogs, 1, 2).map((entry) => (<div role="listitem" class="blog-collection-item w-dyn-item"><BlogCardSlide item={entry} /></div>))}</div>
+                  {take(blogs, 1, 2).length === 0 && (<div class="w-dyn-empty">
+  <div>No items found.</div>
+</div>)}
+                </div>
+              </div>
+            </div>
+            <div class="slider-arrow is-left w-slider-arrow-left">
+              <div class="slider-arrow-icon w-embed"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.41699 14.0029H22.167" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M12.8339 21.003C12.8339 21.003 5.834 15.8475 5.83398 14.0029C5.83397 12.1583 12.834 7.00293 12.834 7.00293" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg></div>
+            </div>
+            <div class="slider-arrow is-right w-slider-arrow-right">
+              <div class="slider-arrow-icon w-embed"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21.584 13.9971L5.83398 13.9971" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M15.1661 6.99701C15.1661 6.99701 22.166 12.1525 22.166 13.9971C22.166 15.8417 15.166 20.9971 15.166 20.9971" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg></div>
+            </div>
+            <div class="slide-nav w-slider-nav w-round w-num"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

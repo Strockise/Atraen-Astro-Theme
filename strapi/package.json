@@ -1,0 +1,49 @@
+{
+  "name": "clavix-strapi",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Strapi v5 CMS for the Clavix Astro theme",
+  "scripts": {
+    "build": "strapi build",
+    "console": "strapi console",
+    "deploy": "strapi deploy",
+    "dev": "strapi develop",
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "strapi": "strapi",
+    "upgrade": "npx @strapi/upgrade latest",
+    "upgrade:dry": "npx @strapi/upgrade latest --dry",
+    "seed": "node scripts/seed.js"
+  },
+  "dependencies": {
+    "@strapi/database": "5.56.0",
+    "@strapi/plugin-cloud": "5.56.0",
+    "@strapi/plugin-users-permissions": "5.56.0",
+    "@strapi/strapi": "5.56.0",
+    "better-sqlite3": "12.8.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.30.3",
+    "styled-components": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=20.0.0 <=26.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "5883e70c-d2a6-4b64-ad04-42b5ddc8f492",
+    "installId": "22981cc640d1cf0440e1db9aa45099fa18bda6be1d0324cb7be868f561529693"
+  },
+  "allowScripts": {
+    "esbuild": true,
+    "@swc/core": true,
+    "better-sqlite3": true
+  },
+  "license": "MIT"
+}

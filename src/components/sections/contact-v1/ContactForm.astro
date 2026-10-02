@@ -1,0 +1,30 @@
+---
+import { site } from '../../../config/site';
+---
+<section class="section_contact-form">
+  <div class="section-gap top-none">
+    <div class="w-layout-blockcontainer container-main w-container">
+      <div class="contact-form-wrapper">
+        <div page-scroll-0="" class="contact-form-block w-form">
+          <form name="email-form" method="post" class="contact-form-wrap" data-endpoint={site.formEndpoint} aria-label="Contact form"><div class="cx-visually-hidden" aria-hidden="true"><label>Leave this field empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+            <div class="contact-wrapper">
+              <div class="contact-form"><label for="email-form-name" class="contact-form-text-label">Full Name</label><input class="contact-form-text-field w-input" maxlength="256" name="name" placeholder="Enter your name..." type="text" required id="email-form-name" autocomplete="name"></div>
+              <div class="contact-form"><label for="email-form-email" class="contact-form-text-label">Email Address</label><input class="contact-form-text-field w-input" maxlength="256" name="email" placeholder="Enter your email..." type="email" required id="email-form-email" autocomplete="email"></div>
+            </div>
+            <div class="contact-wrapper">
+              <div class="contact-form"><label for="email-form-phone" class="contact-form-text-label">Phone Number</label><input class="contact-form-text-field w-input" maxlength="256" name="phone" placeholder="Enter your number..." type="tel" required id="email-form-phone" autocomplete="tel"></div>
+              <div class="contact-form"><label for="email-form-subject" class="contact-form-text-label">Subject</label><input class="contact-form-text-field w-input" maxlength="256" name="subject" placeholder="Enter your subject..." type="text" id="email-form-subject" required></div>
+            </div>
+            <div class="contact-form"><label for="email-form-message" class="contact-form-text-label">Message</label><textarea id="email-form-message" name="message" maxlength="5000" placeholder="Write your message..." class="contact-form-text-field is-text w-input"></textarea></div><input type="submit" data-wait="Please wait..." class="contact-form-button w-button" value="Submit Now">
+          </form>
+          <div class="w-form-done" role="status">
+            <div>Thank you! Your submission has been received!</div>
+          </div>
+          <div class="w-form-fail" role="alert">
+            <div>Oops! Something went wrong while submitting the form.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

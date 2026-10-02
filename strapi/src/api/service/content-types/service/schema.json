@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": { "singularName": "service", "pluralName": "services", "displayName": "Service", "description": "Services (Webflow collection: Services)" },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "slug": { "type": "uid", "targetField": "title", "required": true },
+    "order": { "type": "integer", "default": 0, "required": true },
+    "number": { "type": "string" },
+    "summary": { "type": "text" },
+    "mainImage": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "thumbnailImage": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "duration": { "type": "string" },
+    "industry": { "type": "string" },
+    "client": { "type": "string" },
+    "detailsOne": { "type": "richtext" },
+    "detailsTwo": { "type": "richtext" },
+    "detailsThree": { "type": "richtext" },
+    "detailsFour": { "type": "richtext" },
+    "gallery": { "type": "media", "multiple": true, "allowedTypes": ["images"] },
+    "overviewOne": { "type": "richtext" },
+    "overviewTwo": { "type": "richtext" },
+    "overviewThree": { "type": "richtext" },
+    "overviewFour": { "type": "richtext" }
+  }
+}

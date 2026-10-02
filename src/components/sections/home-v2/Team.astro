@@ -1,0 +1,138 @@
+---
+import PrimaryButton from '../../ui/PrimaryButton.astro';
+import SectionTitle from '../../ui/SectionTitle.astro';
+import TeamGridCard from '../../cards/TeamGridCard.astro';
+import TeamGridCardAlt from '../../cards/TeamGridCardAlt.astro';
+import TeamGridCardSlide from '../../cards/TeamGridCardSlide.astro';
+import { getTeam, take } from '../../../lib/cms';
+
+const team = await getTeam();
+---
+<section class="section_team">
+  <div class="team-section-bg-color">
+    <div class="w-layout-blockcontainer container-main w-container">
+      <div class="team-wrapper">
+        <div class="team-headr-block">
+          <div class="team-title-block">
+            <SectionTitle text="OUR EXPERTISE" />
+          </div>
+          <div class="section-header-block">
+            <h2 title-scroll="" class="heading-style-2">Meet the Experts Behind Clavix Success</h2>
+          </div>
+          <div class="team-button-block">
+            <PrimaryButton href="/team" text="View all Expertise" variant="light" />
+          </div>
+        </div>
+        <div class="team-content-wrapper desktop">
+          <div class="team-content-wrap">
+            <div class="team-collection-list-wrapper is-01 w-dyn-list">
+              <div role="list" class="team-collection-list w-dyn-items">{take(team, 1).map((entry) => (<div role="listitem" class="team-collection-item w-dyn-item"><TeamGridCard item={entry} /></div>))}</div>
+              {take(team, 1).length === 0 && (<div class="w-dyn-empty">
+  <div>No items found.</div>
+</div>)}
+            </div>
+            <div class="team-collection-list-wrapper is-02 w-dyn-list">
+              <div role="list" class="team-collection-list w-dyn-items">{take(team, 1, 2).map((entry) => (<div role="listitem" class="team-collection-item w-dyn-item"><TeamGridCard item={entry} /></div>))}</div>
+              {take(team, 1, 2).length === 0 && (<div class="w-dyn-empty">
+  <div>No items found.</div>
+</div>)}
+            </div>
+            <div class="team-collection-list-wrapper is-03 w-dyn-list">
+              <div role="list" class="team-collection-list w-dyn-items">{take(team, 1, 4).map((entry) => (<div role="listitem" class="team-collection-item w-dyn-item"><TeamGridCardAlt item={entry} /></div>))}</div>
+              {take(team, 1, 4).length === 0 && (<div class="w-dyn-empty">
+  <div>No items found.</div>
+</div>)}
+            </div>
+          </div>
+          <div class="team-content-wrap">
+            <div class="team-collection-list-wrapper is-04 w-dyn-list">
+              <div role="list" class="team-collection-list w-dyn-items">{take(team, 1, 1).map((entry) => (<div role="listitem" class="team-collection-item w-dyn-item"><TeamGridCard item={entry} /></div>))}</div>
+              {take(team, 1, 1).length === 0 && (<div class="w-dyn-empty">
+  <div>No items found.</div>
+</div>)}
+            </div>
+            <div class="team-collection-list-wrapper is-05 w-dyn-list">
+              <div role="list" class="team-collection-list w-dyn-items">{take(team, 1, 3).map((entry) => (<div role="listitem" class="team-collection-item w-dyn-item"><TeamGridCard item={entry} /></div>))}</div>
+              {take(team, 1, 3).length === 0 && (<div class="w-dyn-empty">
+  <div>No items found.</div>
+</div>)}
+            </div>
+            <div class="team-collection-list-wrapper is-06 w-dyn-list">
+              <div role="list" class="team-collection-list w-dyn-items">{take(team, 1, 5).map((entry) => (<div role="listitem" class="team-collection-item w-dyn-item"><TeamGridCard item={entry} /></div>))}</div>
+              {take(team, 1, 5).length === 0 && (<div class="w-dyn-empty">
+  <div>No items found.</div>
+</div>)}
+            </div>
+          </div>
+        </div>
+        <div class="team-content-wrapper mobile">
+          <div data-delay="4000" data-animation="slide" class="slider-block w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
+            <div class="slider-mask w-slider-mask">
+              <div class="slider w-slide">
+                <div class="team-collection-list-wrapper w-dyn-list">
+                  <div role="list" class="team-collection-list w-dyn-items">{take(team, 1).map((entry) => (<div role="listitem" class="team-collection-item w-dyn-item"><TeamGridCard item={entry} /></div>))}</div>
+                  {take(team, 1).length === 0 && (<div class="w-dyn-empty">
+  <div>No items found.</div>
+</div>)}
+                </div>
+              </div>
+              <div class="slider w-slide">
+                <div class="team-collection-list-wrapper w-dyn-list">
+                  <div role="list" class="team-collection-list w-dyn-items">{take(team, 1, 2).map((entry) => (<div role="listitem" class="team-collection-item w-dyn-item"><TeamGridCard item={entry} /></div>))}</div>
+                  {take(team, 1, 2).length === 0 && (<div class="w-dyn-empty">
+  <div>No items found.</div>
+</div>)}
+                </div>
+              </div>
+              <div class="slider w-slide">
+                <div class="team-collection-list-wrapper w-dyn-list">
+                  <div role="list" class="team-collection-list w-dyn-items">{take(team, 1, 4).map((entry) => (<div role="listitem" class="team-collection-item w-dyn-item"><TeamGridCardSlide item={entry} /></div>))}</div>
+                  {take(team, 1, 4).length === 0 && (<div class="w-dyn-empty">
+  <div>No items found.</div>
+</div>)}
+                </div>
+              </div>
+              <div class="slider w-slide">
+                <div class="team-collection-list-wrapper w-dyn-list">
+                  <div role="list" class="team-collection-list w-dyn-items">{take(team, 1, 1).map((entry) => (<div role="listitem" class="team-collection-item w-dyn-item"><TeamGridCard item={entry} /></div>))}</div>
+                  {take(team, 1, 1).length === 0 && (<div class="w-dyn-empty">
+  <div>No items found.</div>
+</div>)}
+                </div>
+              </div>
+              <div class="slider w-slide">
+                <div class="team-collection-list-wrapper w-dyn-list">
+                  <div role="list" class="team-collection-list w-dyn-items">{take(team, 1, 3).map((entry) => (<div role="listitem" class="team-collection-item w-dyn-item"><TeamGridCard item={entry} /></div>))}</div>
+                  {take(team, 1, 3).length === 0 && (<div class="w-dyn-empty">
+  <div>No items found.</div>
+</div>)}
+                </div>
+              </div>
+              <div class="slider w-slide">
+                <div class="team-collection-list-wrapper w-dyn-list">
+                  <div role="list" class="team-collection-list w-dyn-items">{take(team, 1, 5).map((entry) => (<div role="listitem" class="team-collection-item w-dyn-item"><TeamGridCard item={entry} /></div>))}</div>
+                  {take(team, 1, 5).length === 0 && (<div class="w-dyn-empty">
+  <div>No items found.</div>
+</div>)}
+                </div>
+              </div>
+            </div>
+            <div class="slider-arrow is-left w-slider-arrow-left">
+              <div class="slider-arrow-icon w-embed"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.41699 14.0029H22.167" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M12.8339 21.003C12.8339 21.003 5.834 15.8475 5.83398 14.0029C5.83397 12.1583 12.834 7.00293 12.834 7.00293" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg></div>
+            </div>
+            <div class="slider-arrow is-right w-slider-arrow-right">
+              <div class="slider-arrow-icon w-embed"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21.584 13.9971L5.83398 13.9971" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M15.1661 6.99701C15.1661 6.99701 22.166 12.1525 22.166 13.9971C22.166 15.8417 15.166 20.9971 15.166 20.9971" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg></div>
+            </div>
+            <div class="slide-nav w-slider-nav w-round w-num"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

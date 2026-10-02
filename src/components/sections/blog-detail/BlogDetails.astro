@@ -1,0 +1,58 @@
+---
+import SectionTitle from '../../ui/SectionTitle.astro';
+import { formatDate, richText } from '../../../lib/cms';
+import type { Blog } from '../../../lib/types';
+
+interface Props {
+  item: Blog;
+}
+const { item } = Astro.props;
+---
+<section class="section_blog-details">
+  <div class="section-gap bottom-none">
+    <div class="w-layout-blockcontainer container-main w-container">
+      <div class="blog-details-wrapper">
+        <div class="blog-details-header-block">
+          <div page-scroll-0="" class="section-title-block">
+            <SectionTitle text="ABOUT US" />
+          </div>
+          <div class="section-header-block">
+            <h2 title-scroll class="heading-style-2">{item.summary}</h2>
+          </div>
+        </div>
+        <div class="blog-details-content-block">
+          <div page-scroll-1="" class="blog-details-image-block"><img src={item.bannerImage?.url} loading="lazy" alt={item.bannerImage?.alt ?? "blog-details-image"} class="blog-details-image" srcset={item.bannerImage?.srcset} sizes="(max-width: 767px) 100vw, (max-width: 991px) 727px, 939px"></div>
+          <div page-scroll-2="" class="blog-details-content-wrap">
+            <div class="blog-details-content">
+              <h3 class="heading-style-3">Category</h3>
+              <div class="body-text-md text-color-gray">{item.category}</div>
+            </div>
+            <div class="blog-details-content">
+              <h3 class="heading-style-3">Author</h3>
+              <div class="body-text-md text-color-gray">{item.author}</div>
+            </div>
+            <div class="blog-details-content">
+              <h3 class="heading-style-3">Date</h3>
+              <div class="body-text-md text-color-gray">{formatDate(item.date)}</div>
+            </div>
+            <div class="blog-details-content">
+              <h3 class="heading-style-3">Time</h3>
+              <div class="body-text-md text-color-gray">{item.readTime}</div>
+            </div>
+          </div>
+        </div>
+        <div class="blog-bio-wrapper">
+          <div page-scroll-1="" class="blog-bio-wrap">
+            <div class="blog-details w-richtext" set:html={richText(item.detailsOne)}></div>
+          </div>
+          <div page-scroll-1="" class="blog-bio-wrap is-bg-color">
+            <div class="blog-details text-aligh-center w-richtext" set:html={richText(item.detailsTwo)}></div>
+          </div>
+          <div page-scroll-1="" class="blog-bio-wrap">
+            <div class="blog-details w-richtext" set:html={richText(item.detailsThree)}></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

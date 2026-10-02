@@ -1,0 +1,36 @@
+---
+import type { TeamMember } from '../../lib/types';
+import { site } from '../../config/site';
+
+interface Props {
+  item: TeamMember;
+}
+const { item } = Astro.props;
+const itemUrl = `/team/${item.slug}`;
+---
+<div class="expertise-content-card">
+  <a href={itemUrl} class="expertise-image-block w-inline-block"><img src={item.image?.url} loading="lazy" alt={item.image?.alt ?? "expertise-image"} class="expertise-image" srcset={item.image?.srcset}></a>
+  <div class="expertise-content-wrap">
+    <div class="expertise-card-details">
+      <a aria-label="expertise-title-link" href={itemUrl} class="expertise-title-link w-inline-block">
+        <h3 class>{item.name}</h3>
+      </a>
+      <div class="body-text-sm text-color-white">{item.position}</div>
+    </div>
+    <div class="expertise-social-block">
+      <a href={site.social.instagram} target="_blank" class="expertise-social-link-block w-inline-block" rel="noopener noreferrer">
+        <div>IG</div>
+      </a>
+      <a href={site.social.facebook} target="_blank" class="expertise-social-link-block w-inline-block" rel="noopener noreferrer">
+        <div>FB</div>
+      </a>
+      <a href={site.social.linkedin} target="_blank" class="expertise-social-link-block w-inline-block" rel="noopener noreferrer">
+        <div>LN</div>
+      </a>
+      <a href={site.social.youtube} target="_blank" class="expertise-social-link-block w-inline-block" rel="noopener noreferrer">
+        <div>YT</div>
+      </a>
+    </div>
+  </div>
+  <div class="expertise-linear"></div>
+</div>

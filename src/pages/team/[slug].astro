@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TeamDetialsHero from '../../components/sections/team-detail/TeamDetialsHero.astro';
+import TeamDetials from '../../components/sections/team-detail/TeamDetials.astro';
+import Team from '../../components/sections/team-detail/Team.astro';
+import { getTeam } from '../../lib/cms';
+
+export async function getStaticPaths() {
+  const items = await getTeam();
+  return items.map((item) => ({ params: { slug: item.slug }, props: { item } }));
+}
+
+const { item } = Astro.props;
+---
+<BaseLayout title={item.name} description={item.summary} page="team-detail">
+  <TeamDetialsHero />
+  <TeamDetials item={item} />
+  <Team />
+</BaseLayout>

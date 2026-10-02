@@ -1,0 +1,12 @@
+---
+/** Webflow "Section Title" pill. variant 'light' = Webflow variant-2. */
+interface Props {
+  text: string;
+  variant?: 'base' | 'light';
+}
+const { text, variant = 'base' } = Astro.props;
+const v = variant === 'light' ? 'w-variant-63715340-d643-b82d-1f12-4931fd43b590' : undefined;
+---
+<div class:list={['section-title', v]}>
+  <div class:list={['title-text', v]}>{text}</div>
+</div>

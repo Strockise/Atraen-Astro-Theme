@@ -1,0 +1,89 @@
+---
+/**
+ * Site navigation (Webflow "Navigation" component). Mobile menu + dropdown behaviour:
+ * src/scripts/webflow-ui.ts. Menu items: src/config/navigation.ts.
+ *
+ * variant 'alt' = Webflow variant-2 (used on the style guide page).
+ */
+import PrimaryButton from '../ui/PrimaryButton.astro';
+import { mainNav, pagesDropdown, headerCta, headerMainCta } from '../../config/navigation';
+import { site } from '../../config/site';
+
+interface Props {
+  variant?: 'default' | 'alt';
+}
+const { variant = 'default' } = Astro.props;
+
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isCurrent = (href: string) => (href.replace(/\/$/, '') || '/') === path;
+const current = (href: string) => (isCurrent(href) ? { 'aria-current': 'page' as const } : {});
+---
+<div
+  data-animation="default"
+  data-collapse="medium"
+  data-duration="400"
+  data-easing="ease"
+  data-easing2="ease"
+  role="banner"
+  class="navbar-block w-nav"
+  data-nav
+>
+  <div class="nav-inner-block">
+    <div class="container-main w-container">
+      <div class:list={['nav-content-block', variant === 'alt' && 'w-variant-c4262229-529f-03c6-e4e3-0e0d998a3567']}>
+        <a href="/" {...current('/')} aria-label={`${site.name} home`} class:list={['brand-logo-block w-nav-brand', isCurrent('/') && 'w--current']}><img loading="lazy" src="/images/Nav-Logo.svg" alt="" class="brand-logo white" /><img loading="lazy" src="/images/Nav-Logo.svg" alt="" class="brand-logo dark" /></a>
+        <nav role="navigation" class="nav-menu-content-block w-nav-menu" id="site-nav-menu">
+          <div class="nav-link-wrap">
+            {mainNav.map((l) => (
+              <a href={l.href} {...current(l.href)} class:list={['nav-link w-nav-link', isCurrent(l.href) && 'w--current']}>{l.label}</a>
+            ))}
+            <div data-delay="0" data-hover="true" class="nav-dropdown w-dropdown" data-dropdown>
+              <div class="nav-dropdown-togo w-dropdown-toggle" role="button" tabindex="0" aria-haspopup="menu" aria-expanded="false" aria-controls="nav-pages-dropdown">
+                <div class="nav-dropdown-text">Pages</div>
+                <div class="nav-dropdown-icon w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="square"></path>
+                  </svg>
+                </div>
+              </div>
+              <nav class="dropdown-navigation w-dropdown-list" id="nav-pages-dropdown">
+                <div class="nav-bropdown-gap">
+                  <div class="nav-dropdown-wrapper">
+                    <div class="nav-dropdown-wrap">
+                      {pagesDropdown.map((group) => (
+                        <div class="nav-dropdown-block">
+                          <div class="nav-dropdown-text-lg">{group.title}</div>
+                          <div class="dropdown-link-block">
+                            {group.links.map((l) => (
+                              <a href={l.href} {...current(l.href)} class:list={['dropdown-link w-nav-link', isCurrent(l.href) && 'w--current']}>{l.label}</a>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <div class="general-button-block is-1">
+              <PrimaryButton href={headerCta.href} text={headerCta.label} variant="accent" />
+            </div>
+          </div>
+        </nav>
+        <div class="nav-main-button-block">
+          <div class="general-button-block is-2 white">
+            <PrimaryButton href={headerMainCta.href} text={headerMainCta.label} />
+          </div>
+          <div class="menu-button-block">
+            <div class="nav-menu-button-block w-nav-button" role="button" tabindex="0" aria-label="menu" aria-controls="site-nav-menu" aria-haspopup="menu" aria-expanded="false">
+              <div class="menu-button-icon">
+                <div class="menu-button-line is-01"></div>
+                <div class="menu-button-line is-02"></div>
+                <div class="menu-button-line is-03"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

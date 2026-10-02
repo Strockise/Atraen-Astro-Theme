@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogDetailsHero from '../../components/sections/blog-detail/BlogDetailsHero.astro';
+import BlogDetails from '../../components/sections/blog-detail/BlogDetails.astro';
+import BlogSectionGap from '../../components/sections/blog-detail/BlogSectionGap.astro';
+import { getBlogs } from '../../lib/cms';
+
+export async function getStaticPaths() {
+  const items = await getBlogs();
+  return items.map((item) => ({ params: { slug: item.slug }, props: { item } }));
+}
+
+const { item } = Astro.props;
+---
+<BaseLayout title={item.title} description={item.summary} image={item.bannerImage?.url} type="article" page="blog-detail">
+  <BlogDetailsHero item={item} />
+  <BlogDetails item={item} />
+  <BlogSectionGap />
+</BaseLayout>

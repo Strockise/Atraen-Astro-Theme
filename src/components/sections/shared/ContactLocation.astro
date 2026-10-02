@@ -1,0 +1,32 @@
+---
+import PrimaryButton from '../../ui/PrimaryButton.astro';
+import { site } from '../../../config/site';
+---
+<section class="section_contact-location">
+  <div class="section-gap top-none">
+    <div class="w-layout-blockcontainer container-main w-container">
+      <div class="contact-loaction-wrapper">
+        <div class="contact-location-image-block"><img src="/images/Contact-Location.webp" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="/images/Contact-Location-p-500.webp 500w, /images/Contact-Location-p-800.webp 800w, /images/Contact-Location-p-1080.webp 1080w, /images/Contact-Location-p-1600.webp 1600w, /images/Contact-Location.webp 1935w" alt="contact-location-image" class="contact-location-image"></div>
+        <div class="contact-location-content-block">
+          <div class="contact-location-title-block">
+            <h2 class="contact-location-title">Clavix - USA</h2>
+            <p class="body-text-md text-color-gray">1901 Thornridge Cir. Shiloh, Hawaii 81063</p>
+          </div>
+          <div class="contact-location-block">
+            <div class="contact-location">
+              <div class="body-text-md text-weight-medium">Email:</div>
+              <a href={`mailto:${site.email}`} class="contact-link">{site.email}</a>
+            </div>
+            <div class="contact-location">
+              <div class="body-text-md text-weight-medium">Phone:</div>
+              <a href={site.phoneHref} class="contact-link">{site.phone}</a>
+            </div>
+          </div>
+          <div class="contact-button-block">
+            <PrimaryButton href={site.mapUrl} text="View on Google Map" variant="light" target="_blank" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

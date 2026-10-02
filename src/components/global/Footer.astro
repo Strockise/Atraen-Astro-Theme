@@ -1,0 +1,97 @@
+---
+/** Site footer. Links: src/config/navigation.ts, copyright: src/config/site.ts */
+import {
+  footerMainPages,
+  footerCmsPages,
+  footerUtilityPages,
+  footerCta,
+  footerMarquee,
+} from '../../config/navigation';
+import { site } from '../../config/site';
+
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isCurrent = (href: string) => (href.replace(/\/$/, '') || '/') === path;
+const link = (href: string) => ({
+  href,
+  class: isCurrent(href) ? 'footer-link w--current' : 'footer-link',
+  'aria-current': isCurrent(href) ? ('page' as const) : undefined,
+});
+const marqueeIcon = `<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17 6.05078L21.4248 1.62598L26.374 6.57617L22.4502 10.5H28V17.5H22.4492L26.374 21.4248L21.4248 26.374L17 21.9492V28H10V22.9502L6.5752 26.375L1.62598 21.4248L5.55078 17.5H0V10.5H5.55078L1.62598 6.5752L6.5752 1.625L10 5.0498V0H17V6.05078Z" fill="white"></path></svg>`;
+---
+<section class="section_footer">
+  <div class="w-layout-blockcontainer container-full w-container">
+    <div class="footer-wrapper">
+      <div class="footer-top-wrapper">
+        <div class="footer-image-block"><img loading="lazy" src="/images/CTA_Image_resized.webp" alt="" class="footer-image" />
+          <div class="footer-image-overlay"></div>
+        </div>
+        <div class="footer-top-content">
+          <div class="section-header-block max-width-45">
+            <h2 title-scroll="" class="footer-header">{footerCta.label}</h2>
+          </div>
+          <a page-scroll-1="" href={footerCta.href} aria-label={footerCta.label} class="footer-icon-block w-inline-block">
+            <div class="w-embed"><svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M56.7489 16.0879L29.624 16.0879C28.4103 16.0879 27.4264 17.0718 27.4264 18.2855C27.4264 19.4991 28.4102 20.4829 29.6238 20.483L56.1241 20.4859L18.102 58.5081C17.2437 59.3664 17.2437 60.758 18.102 61.6163C18.9603 62.4746 20.3518 62.4746 21.2101 61.6163L59.2385 23.5879L59.2357 50.0941C59.2355 51.3078 60.2194 52.2918 61.4331 52.2918C62.6467 52.2918 63.6305 51.3081 63.6306 50.0945L63.6335 22.9725C63.6335 21.1324 62.9155 19.4012 61.6163 18.102C60.3171 16.8027 58.5858 16.0848 56.752 16.091L56.7489 16.0879Z" fill="currentColor"></path>
+              </svg>
+            </div>
+          </a>
+        </div>
+        <div class="footer-linear"></div>
+      </div>
+      <div class="footer-bottom-wrapper">
+        <div class="footer-line"></div>
+        <div class="footer-link-wrapper">
+          <div class="footer-link-block">
+            <div class="footer-link-title">Main Pages</div>
+            <div class="footer-link-wrap">
+              {footerMainPages.map((col) => (
+                <div class="footer-link-flex">
+                  {col.map((l) => <a {...link(l.href)}>{l.label}</a>)}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="footer-link-wrap is-gap">
+            <div class="footer-link-block">
+              <div class="footer-link-title">CMS Page</div>
+              <div class="footer-link-wrap">
+                <div class="footer-link-flex">
+                  {footerCmsPages.map((l) => <a {...link(l.href)}>{l.label}</a>)}
+                </div>
+              </div>
+            </div>
+            <div class="footer-link-block">
+              <div class="footer-link-title">Utility Page</div>
+              <div class="footer-link-wrap">
+                <div class="footer-link-flex">
+                  {footerUtilityPages.map((l) => <a {...link(l.href)}>{l.label}</a>)}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright-wrapper">
+          <p class="footer-cpyright-text">{site.copyright}</p>
+          <div class="footer-copyright-wrap">
+            <p class="footer-cpyright-text">Designed by <a href={site.credit.url} target="_blank" rel="noopener noreferrer" class="footer-copyright-link">{site.credit.name}</a>, powered by <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="footer-copyright-link">Astro</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-marque-block">
+        <div class="marque-wrapper">
+          {[0, 1].map(() => (
+            <div class="marque-wrap" aria-hidden="true">
+              {footerMarquee.map((word, i) => (
+                <>
+                  <div class="marque-logo">{word}</div>
+                  {i < footerMarquee.length - 1 && <div class="marque-icon w-embed" set:html={marqueeIcon} />}
+                </>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

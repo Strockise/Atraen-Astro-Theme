@@ -1,0 +1,58 @@
+---
+import PrimaryButton from '../../ui/PrimaryButton.astro';
+import { richText } from '../../../lib/cms';
+import type { TeamMember } from '../../../lib/types';
+
+interface Props {
+  item: TeamMember;
+}
+const { item } = Astro.props;
+---
+<section class="section_team-detials">
+  <div class="section-gap">
+    <div class="w-layout-blockcontainer container-main w-container">
+      <div class="team-details-wrapper">
+        <div page-scroll-0="" class="team-details-left-content">
+          <div class="team-details w-richtext" set:html={richText(item.details)}></div>
+        </div>
+        <div page-scroll-1="" class="team-detials-right-content">
+          <div class="team-details-sticky-block">
+            <div class="team-details-image-block"><img src={item.image?.url} loading="lazy" alt={item.image?.alt ?? "team-details-image"} class="image" srcset={item.image?.srcset}></div>
+            <div class="team-bio-details-block">
+              <div class="team-bio-details">
+                <div class="body-text-sm text-color-gray">Name</div>
+                <div class="body-text-md">{item.name}</div>
+              </div>
+              <div class="team-bio-details">
+                <div class="body-text-sm text-color-gray">Designation</div>
+                <div class="body-text-md">{item.position}</div>
+              </div>
+              <div class="team-bio-details">
+                <div class="body-text-sm text-color-gray">Experience</div>
+                <div class="body-text-md">{item.experience}</div>
+              </div>
+              <div class="team-bio-details">
+                <div class="body-text-sm text-color-gray">Language</div>
+                <div class="body-text-md">{item.languages}</div>
+              </div>
+              <div class="team-bio-details">
+                <div class="body-text-sm text-color-gray">Phone Number</div>
+                <div class="body-text-md">{item.phone}</div>
+              </div>
+              <div class="team-bio-details">
+                <div class="body-text-sm text-color-gray">Email Address</div>
+                <div class="body-text-md">{item.email}</div>
+              </div>
+            </div>
+            <div class="team-details-summary-block">
+              <p class="body-text-md text-color-gray">A results-driven strategist focused on building scalable business models and long-term growth strategies for modern companies.</p>
+            </div>
+            <div class="team-details-button">
+              <PrimaryButton href="/contact/contact-v1" text="Book a Consultation" variant="light" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,54 @@
+---
+import SectionTitle from '../../ui/SectionTitle.astro';
+import type { Service } from '../../../lib/types';
+
+interface Props {
+  item: Service;
+}
+const { item } = Astro.props;
+---
+<section class="section_service-bio">
+  <div class="section-gap">
+    <div class="w-layout-blockcontainer container-main w-container">
+      <div class="service-bio-wrapper">
+        <div class="service-top-wrapper">
+          <div class="service-header-block">
+            <div page-scroll-0="" class="section-title-block">
+              <SectionTitle text="BUSINESS CONSULTING" />
+            </div>
+            <div class="section-header-block">
+              <h2 title-scroll="" class="heading-style-2">Our Business Strategy Consulting service helps organizations define clear objectives</h2>
+            </div>
+          </div>
+          <div class="service-bio-icon-block">
+            <div class="service-bio-icon w-embed"><svg width="32" height="39" viewBox="0 0 32 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M30.8877 23.4121C31.3457 23.8703 31.3456 24.6131 30.8877 25.0713L18.958 37.001L18.9551 37.001L18.8965 37.0596C18.1266 37.8347 17.0955 38.2617 16 38.2617C14.9048 38.2617 13.8733 37.835 13.0977 37.0596L1.11234 25.0713C0.654338 24.613 0.654218 23.8703 1.11234 23.4121C1.57063 22.9538 2.31427 22.9538 2.7725 23.4121L14.4854 35.1279L14.8262 35.4688L14.8262 1.37402C14.8262 0.725847 15.3519 0.200196 16 0.200196C16.6482 0.200206 17.1739 0.725854 17.1739 1.37402L17.1739 35.4639L17.5147 35.1221L29.2276 23.4121C29.6859 22.9539 30.4295 22.9539 30.8877 23.4121Z" fill="#4E6E40" stroke="#F0F3EE" stroke-width="0.4"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="service-bio-content-wrapper">
+          <div page-scroll-2="" class="service-bio-image-block"><img src={item.thumbnailImage?.url} loading="lazy" alt={item.thumbnailImage?.alt ?? "service-bio-image"} class="service-bio-image" srcset={item.thumbnailImage?.srcset} sizes="100vw"></div>
+          <div page-scroll-3="" class="service-bio-block">
+            <div class="service-bio-wrap">
+              <h3 class="service-bio-title">Service</h3>
+              <div class="body-text-md text-color-gray">{item.title}</div>
+            </div>
+            <div class="service-bio-wrap">
+              <h3 class="service-bio-title">Duration</h3>
+              <div class="body-text-md text-color-gray">{item.duration}</div>
+            </div>
+            <div class="service-bio-wrap">
+              <h3 class="service-bio-title">Industry</h3>
+              <div class="body-text-md text-color-gray">{item.industry}</div>
+            </div>
+            <div class="service-bio-wrap">
+              <h3 class="service-bio-title">Client</h3>
+              <div class="body-text-md text-color-gray">{item.client}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

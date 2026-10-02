@@ -1,0 +1,28 @@
+---
+import type { TeamMember } from '../../lib/types';
+
+interface Props {
+  item: TeamMember;
+}
+const { item } = Astro.props;
+const itemUrl = `/team/${item.slug}`;
+---
+<div class="team-content-card">
+  <div class="team-image-block">
+    <a href={itemUrl} class="team-image-link w-inline-block"><img loading="lazy" src={item.image?.url} alt={item.image?.alt ?? "team-image"} class="team-image" srcset={item.image?.srcset}></a>
+  </div>
+  <div class="team-card-details-block">
+    <div class="team-card-details">
+      <div class="team-title-link">
+        <h3 class="team-card-title">{item.name}</h3>
+      </div>
+      <div class="team-card-text">{item.position}</div>
+    </div>
+    <div class="team-card-icon-block">
+      <div class="team-card-icon w-embed"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15.6059 4.42416L8.14661 4.42416C7.81285 4.42416 7.54227 4.69473 7.54227 5.0285C7.54227 5.36224 7.81281 5.6328 8.14655 5.63284L15.4341 5.63363L4.97804 16.0897C4.74201 16.3258 4.74201 16.7084 4.97804 16.9445C5.21407 17.1805 5.59675 17.1805 5.83279 16.9445L16.2906 6.48667L16.2898 13.7759C16.2898 14.1096 16.5603 14.3802 16.8941 14.3802C17.2278 14.3802 17.4984 14.1097 17.4984 13.776L17.4992 6.31743C17.4992 5.81142 17.3018 5.33532 16.9445 4.97804C16.5872 4.62076 16.1111 4.42331 15.6068 4.42502L15.6059 4.42416Z" fill="currentColor"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
