@@ -4,7 +4,7 @@ Clavix is a premium Astro theme for consulting firms, agencies and corporate bus
 pages, three about pages, three contact pages, services, team and blog sections, all powered by a headless CMS
 (Strapi) with smooth, scroll-driven animations.
 
-**Live demo:** https://clavix-astro.vercel.app <!-- update after deploying -->
+**Live demo:** https://clavix-astro.vercel.app
 
 ![Clavix preview](public/images/og-image.webp)
 
