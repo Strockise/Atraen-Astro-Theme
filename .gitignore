@@ -35,3 +35,4 @@ strapi/public/uploads/*
 
 # TypeScript incremental build info
 *.tsbuildinfo
+strapi/.strapi-updater.json
